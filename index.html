@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Stockouts</title>
+
+    <link href="css/style2.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+
+<div id="container" class="col-xs-12 col-md-8 col-md-offset-2">
+
+	<div class="page-header">
+	  <h1>MEDICINE STOCKOUTS <small>Tracking SA's Stockouts</small></h1>
+	</div>
+
+	<div id="introText">
+		<p>
+			We use citizen journalists to visit clinics and check if a predefined list of medicines are in stock. These medicines are required to be available according to DoH directive.
+		</p>
+	</div> <!-- end of introText -->
+
+	<div id="stockStatus">
+		<div class="panel panel-default">
+		  	<div class="panel-body">
+
+		  	<div class="row">
+  				<div class="col-xs-6 col-md-4">
+  				<h3>
+		    		<span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;CLINIC CHECK
+		    	</h3>
+  				</div>
+  				<div class="col-xs-6 col-md-4">
+  					<p>
+		    		<span class="stockStatusFigure">76</span>&nbsp; clinics monitored across South Africa
+		    		</p>
+  				</div>
+  				<div class="col-xs-6 col-md-4">
+  					<p>
+		    		<span class="stockStatusFigure">20</span>&nbsp; clinics monitored in the last three months
+		    		</p>
+  				</div>
+			</div>
+
+		  	</div>
+		</div>
+	</div> <!-- end of stockStatus -->
+
+<div id="section1" class="row">
+
+	<h2>
+		CLINICS BY PROVINCE
+	</h2>
+
+	<div id="" class="row">
+
+		<div id="clinicProv" class="col-xs-6">
+			<ul class="nav nav-pills nav-stacked">
+			  <li role="presentation" class="active"><a href="#">Eastern Cape</a></li>
+			  <li role="presentation"><a href="#">Free State</a></li>
+			  <li role="presentation"><a href="#">Gauteng</a></li>
+			</ul>
+		</div>
+
+		<div id="clinicProvUnique" class="col-xs-6">
+			<div class="thumbnail">
+	      <img src="" alt="...">
+	      <div class="caption">
+	        <h3>Eastern Cape</h3>
+	        <p>...</p>
+      </div>
+    </div>
+		</div>
+
+	</div> <!-- end of row -->
+
+
+</div> <!-- end  section1 -->
+
+
+<div id="section2" class="row">
+
+<h2>MOST COMMON STOCKOUTS</h2>
+
+<div id="stockConsistent" class="col-xs-6">
+
+	<h4>
+		Consistently in stock for 2016
+	</h4>
+	
+	<ul class="list-group">
+		<li class="list-group-item">
+			Adrenaline 1 mg/ml injection <span class="dosage">(1 mL ampoule)</span>
+		</li>
+		<li class="list-group-item">
+			Amoxicillin 125 mg/5ml suspension <span class="dosage">(75 or 100 mL)</span>
+		</li>
+		<li class="list-group-item">
+			Hydrochlorothiazide 12.5 or 25 mg tablets <span class="dosage">(28 tablets)</span>
+		</li>
+		<li class="list-group-item">
+			Insulin soluble 100IU/ml injection <span class="dosage">(10 mL vial)</span>
+		</li>
+		<li class="list-group-item">
+			Isoniazid 300 mg tablet <span class="dosage">(28 tablets)</span>
+		</li>
+		<li class="list-group-item">
+			Medroxyprogesterone injection 150 mg <span class="dosage">(1 mL vial)</span>
+		</li>
+		<li class="list-group-item">
+			Metformin 500 mg or 850 mg tablets <span class="dosage">(56 or 84 tablets)</span>
+		</li>
+		<li class="list-group-item">
+			Tetanus toxoid vaccine <span class="dosage">(10 doses)</span>
+		</li>
+	</ul>
+
+</div> <!-- end stockOverview -->
+
+
+<div id="stockWorst" class="col-xs-6">
+	
+	<h4 style="font-family: 'Open Sans';">
+		Worst out of stock
+	</h4>
+	
+	<ul class="list-group">
+		<li class="list-group-item">
+			Paracetamol 500 mg tablets <span class="dosage">(10 or 20 tablets)</span>
+		</li>
+		<li class="list-group-item">
+			Abacavir 20 mg/mL solution <span class="dosage">(240 mL)</span>
+		</li>
+		<li class="list-group-item">
+			Lamivudine 10 mg/mL solution <span class="dosage">(240 mL)</span>
+		</li>
+		<li class="list-group-item">
+			DTaP-IPV/Hib (Pentavalent) Vaccine <span class="dosage">(EPI)</span>
+		</li>
+		<li class="list-group-item">
+			Cefixime 400 mg capsules <span class="dosage">(1 capsule)</span>
+		</li>
+	</ul>
+
+
+</div> <!-- end stockContent -->
+
+
+</div> <!-- end  section2 -->
+
+<div id="dataDL" class="col-xs-12">
+
+	<h2>
+		DOWNLOAD THE DATA
+	</h2>
+
+	<button type="button" class="btn btn-primary btn-lg" style="background-color:transparent;color:#EC7F24;font-weight:bold;border-color:#EC7F24; border-radius:0px;font-size:14px;">
+		<span class="glyphicon glyphicon-save" aria-hidden-"true"></span>&nbsp;&nbsp;ALL DATA
+	</button>
+
+</div> <!-- end of dataDL -->
+
+</div>
+
+</body>
+
+</html>
