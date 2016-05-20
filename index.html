@@ -8,17 +8,11 @@
 
     <title>Stockouts</title>
 
+ 
     <link href="css/style2.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script type="text/javascript" src="js/control.js"></script>
 
-    <!-- Load Google Charts -->
-    <!--<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-	<script type="text/javascript">
-	  google.charts.load('current', {packages: ['corechart']});
-	  google.charts.setOnLoadCallback(drawChart);
-	</script>-->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 </head>
 
@@ -74,11 +68,10 @@
 		<div id="clinicProv" class="col-xs-12 col-md-6">	
 
 		<div class="btn-group-vertical" role="group" aria-label="...">
-			<button type="button" class="btn btn-default">Eastern Cape</button>
-			<button type="button" class="btn btn-default">Free State</button>
-			<button type="button" class="btn btn-default">Gauteng</button>
+			<button id="EC" type="button" class="btn btn-default">Eastern Cape</button>
+			<button id="FS" type="button" class="btn btn-default">Free State</button>
+			<button id="GT" type="button" class="btn btn-default">Gauteng</button>
 		</div>
-
 
 		</div>
 
@@ -86,7 +79,7 @@
 
 		<div class="panel panel-default">
 				
-		<div id="infoEC" class=""> <!-- start EC -->
+		<div id="infoEC" style="display:none;"> <!-- start EC -->
 				<div class="panel-heading">
 					<h4>Eastern Cape</h4>
 				</div>
@@ -106,7 +99,7 @@
 
 	  	</div> <!-- end EC -->
 
-		<div id="infoFS" class="hidden"> <!-- start FS -->
+		<div id="infoFS" style="display:none;"> <!-- start FS -->
 				<div class="panel-heading">
 					<h4>Free State</h4>
 				</div>
@@ -126,7 +119,7 @@
 
 	  	</div> <!-- end FS -->
 
-		<div id="infoGT" class="hidden"> <!-- start GT -->
+		<div id="infoGT" style="display:none;"> <!-- start GT -->
 				<div class="panel-heading">
 					<h4>Gauteng</h4>
 				</div>
@@ -162,7 +155,7 @@
 <div id="stockConsistent" class="col-xs-12 col-md-6">
 
 	<h4>
-		Consistently in stock for 2016
+		CONSISTENTLY IN STOCK
 	</h4>
 	
 	<ul class="list-group">
@@ -198,7 +191,7 @@
 <div id="stockWorst" class="col-xs-12 col-md-6">
 	
 	<h4 style="font-family: 'Open Sans';">
-		Worst out of stock
+		WORST OUT OF STOCK
 	</h4>
 	
 	<ul class="list-group">
@@ -229,8 +222,7 @@
 
 <div id="stockTrends" class="col-xs-12 col-md-8 col-md-offset-2">
 
-	<div id="chart_div">
-	</div>
+	  <div id="chart_div"></div>
 
 </div>
 
@@ -252,6 +244,30 @@
 </div> <!-- end of dataDL -->
 
 </div>
+
+
+<script type="text/javascript">
+$( "#FS" ).click(function() {
+	$("#infoEC").hide();
+	$("#infoGT").hide();
+  	$( "#infoFS" ).toggle();
+});
+
+$( "#EC" ).click(function() {
+	$("#infoFS").hide();
+	$("#infoGT").hide();
+  	$( "#infoEC" ).toggle();
+});
+
+$( "#GT" ).click(function() {
+	$("#infoFS").hide();
+	$("#infoEC").hide();
+  	$( "#infoGT" ).toggle();
+});
+
+</script> 
+
+
 
 </body>
 

@@ -50,6 +50,14 @@ ul li {
 	font-family: 'Lato', sans-serif;
 }
 
+.btn-primary:hover {
+	font-family: 'Lato', sans-serif;
+	color:#fff!important;
+	background-color:#EC7F24!important;
+}
+
+
+
 .figures {
 	font-family: 'Lato', sans-serif;
 	font-weight: bold;
@@ -100,8 +108,6 @@ ul li {
 	font-size: 30px;
 }
 
-
-
 #clinicProvUnique .panel .panel-body {
 	color: #EC7F24;
 }
@@ -112,7 +118,27 @@ ul li {
     border-bottom-right-radius: 0px!important;
     border-bottom-left-radius: 0px!important;
 }
-
+.btn-default {
+	color:#EC7F24!important;
+	border-color: #EC7F24!important;
+}
+.btn-default:active {
+	background-color:#EC7F24!important;
+	color: #efefef!important;
+}
+.btn-default:focus {
+	background-color: #EC7F24!important;
+	color:#fff!important;
+}
+.btn-default:hover {
+    color: #fff!important;
+    background-color: #EC7F24!important;
+    border-color: #EC7F24!important;
+}
+.btn-default.active {
+	color:#fff!important;
+	background-color: #EC7F24!important;
+}
 
 /* ------- S E C T I O N S ------- */
 
@@ -177,6 +203,7 @@ a {
 	font-weight: bold;
 	font-size: 14px;
 	font-family: 'Lato', sans-serif;
+	color:#CA640F;
 }
 
 .dosage {
