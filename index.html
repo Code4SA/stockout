@@ -10,7 +10,15 @@
 
     <link href="css/style2.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/control.js"></script>
 
+    <!-- Load Google Charts -->
+    <!--<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
+	  google.charts.load('current', {packages: ['corechart']});
+	  google.charts.setOnLoadCallback(drawChart);
+	</script>-->
 
 </head>
 
@@ -34,17 +42,17 @@
 		  	<div class="panel-body">
 
 		  	<div class="row">
-  				<div class="col-xs-6 col-md-4">
+  				<div class="col-xs-12 col-md-4">
   				<h3>
 		    		<span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;CLINIC CHECK
 		    	</h3>
   				</div>
-  				<div class="col-xs-6 col-md-4">
+  				<div class="col-xs-12 col-md-4">
   					<p>
 		    		<span class="stockStatusFigure">76</span>&nbsp; clinics monitored across South Africa
 		    		</p>
   				</div>
-  				<div class="col-xs-6 col-md-4">
+  				<div class="col-xs-12 col-md-4">
   					<p>
 		    		<span class="stockStatusFigure">20</span>&nbsp; clinics monitored in the last three months
 		    		</p>
@@ -63,22 +71,82 @@
 
 	<div id="" class="row">
 
-		<div id="clinicProv" class="col-xs-6">
-			<ul class="nav nav-pills nav-stacked">
-			  <li role="presentation" class="active"><a href="#">Eastern Cape</a></li>
-			  <li role="presentation"><a href="#">Free State</a></li>
-			  <li role="presentation"><a href="#">Gauteng</a></li>
-			</ul>
+		<div id="clinicProv" class="col-xs-12 col-md-6">	
+
+		<div class="btn-group-vertical" role="group" aria-label="...">
+			<button type="button" class="btn btn-default">Eastern Cape</button>
+			<button type="button" class="btn btn-default">Free State</button>
+			<button type="button" class="btn btn-default">Gauteng</button>
 		</div>
 
-		<div id="clinicProvUnique" class="col-xs-6">
-			<div class="thumbnail">
-	      <img src="" alt="...">
-	      <div class="caption">
-	        <h3>Eastern Cape</h3>
-	        <p>...</p>
-      </div>
-    </div>
+
+		</div>
+
+		<div id="clinicProvUnique" class="col-xs-12 col-md-6">
+
+		<div class="panel panel-default">
+				
+		<div id="infoEC" class=""> <!-- start EC -->
+				<div class="panel-heading">
+					<h4>Eastern Cape</h4>
+				</div>
+	  			
+	  			<div class="panel-body">
+	    			<p>
+
+	    				<span class="glyphicon glyphicon-list-alt"></span>&nbsp; 16
+	    				<br>clinics monitored
+
+	    			</p>
+	    			<p>
+		    			<span class="glyphicon glyphicon-time"></span>&nbsp; 5
+		    			<br>clinics monitored in the last three months
+	    			</p>
+	  			</div>
+
+	  	</div> <!-- end EC -->
+
+		<div id="infoFS" class="hidden"> <!-- start FS -->
+				<div class="panel-heading">
+					<h4>Free State</h4>
+				</div>
+	  			
+	  			<div class="panel-body">
+	    			<p>
+
+	    				<span class="glyphicon glyphicon-list-alt"></span>&nbsp; 3
+	    				<br>clinics monitored
+
+	    			</p>
+	    			<p>
+		    			<span class="glyphicon glyphicon-time"></span>&nbsp; 2
+		    			<br>clinics monitored in the last three months
+	    			</p>
+	  			</div>
+
+	  	</div> <!-- end FS -->
+
+		<div id="infoGT" class="hidden"> <!-- start GT -->
+				<div class="panel-heading">
+					<h4>Gauteng</h4>
+				</div>
+	  			
+	  			<div class="panel-body">
+	    			<p>
+
+	    				<span class="glyphicon glyphicon-list-alt"></span>&nbsp; 15
+	    				<br>clinics monitored
+
+	    			</p>
+	    			<p>
+		    			<span class="glyphicon glyphicon-time"></span>&nbsp; 5
+		    			<br>clinics monitored in the last three months
+	    			</p>
+	  			</div>
+
+	  	</div> <!-- end GT -->
+
+			</div>	
 		</div>
 
 	</div> <!-- end of row -->
@@ -91,7 +159,7 @@
 
 <h2>MOST COMMON STOCKOUTS</h2>
 
-<div id="stockConsistent" class="col-xs-6">
+<div id="stockConsistent" class="col-xs-12 col-md-6">
 
 	<h4>
 		Consistently in stock for 2016
@@ -127,7 +195,7 @@
 </div> <!-- end stockOverview -->
 
 
-<div id="stockWorst" class="col-xs-6">
+<div id="stockWorst" class="col-xs-12 col-md-6">
 	
 	<h4 style="font-family: 'Open Sans';">
 		Worst out of stock
@@ -156,6 +224,20 @@
 
 
 </div> <!-- end  section2 -->
+
+<div id="section3" class="row">
+
+<div id="stockTrends" class="col-xs-12 col-md-8 col-md-offset-2">
+
+	<div id="chart_div">
+	</div>
+
+</div>
+
+<div id="" class="">
+</div>
+
+</div>
 
 <div id="dataDL" class="col-xs-12">
 
