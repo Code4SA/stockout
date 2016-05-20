@@ -8,12 +8,19 @@
 
     <title>Medicine Stockout</title>
 
- 
     <link href="css/style2.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="js/control.js"></script>
 
+    <!-- Google Charts -->  
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script>
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      </script>
+ 
 </head>
 
 <body>
@@ -222,11 +229,9 @@
 
 <div id="stockTrends" class="col-xs-12 col-md-8 col-md-offset-2">
 
-	  <div id="chart_div"></div>
+	
+  <div id="curve_chart" style="width: 900px; height: 500px"></div>
 
-</div>
-
-<div id="" class="">
 </div>
 
 </div>
@@ -265,9 +270,7 @@ $( "#GT" ).click(function() {
   	$( "#infoGT" ).toggle();
 });
 
-</script> 
-
-
+</script>
 
 </body>
 
