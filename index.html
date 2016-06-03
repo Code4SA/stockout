@@ -8,270 +8,130 @@
 
     <title>Medicine Stockout</title>
 
-    <link href="css/style2.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+	<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="js/control.js"></script>
-
-    <!-- Google Charts -->  
-      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-      <script>
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-      </script>
- 
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+    	google.charts.load('current', {'packages':['corechart']});
+    	google.charts.setOnLoadCallback(drawChart);
+    </script>
 </head>
 
 <body>
 
-
-<div id="container" class="col-xs-12 col-md-8 col-md-offset-2">
-
-	<div class="page-header">
-	  <h1>MEDICINE STOCKOUTS <small>Tracking SA's Stockouts</small></h1>
-	</div>
-
-	<div id="introText">
+<div class="row">
+<h1>MEDICINE STOCKOUTS <small>Tracking SA's Stockouts</small></h1>
+<hr>
 		<p>
 			We use citizen journalists to visit clinics and check if a predefined list of medicines are in stock. These medicines are required to be available according to DoH directive.
 		</p>
-	</div> <!-- end of introText -->
+</div>
 
-	<div id="stockStatus">
-		<div class="panel panel-default">
-		  	<div class="panel-body">
+<div class="row clinic-check">
 
-		  	<div class="row">
-  				<div class="col-xs-12 col-md-4">
-  				<h3>
-		    		<span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;CLINIC CHECK
-		    	</h3>
-  				</div>
-  				<div class="col-xs-12 col-md-4">
-  					<p>
-		    		<span class="stockStatusFigure">76</span>&nbsp; clinics monitored across South Africa
-		    		</p>
-  				</div>
-  				<div class="col-xs-12 col-md-4">
-  					<p>
-		    		<span class="stockStatusFigure">20</span>&nbsp; clinics monitored in the last three months
-		    		</p>
-  				</div>
-			</div>
+<div class="col-xs-12 col-md-4">
+<h3 class="cl-mon"><i class="fa fa-list-alt fa-fw" aria-hidden="true"></i> CLINICS MONITORED</h3>
+</div>
 
-		  	</div>
-		</div>
-	</div> <!-- end of stockStatus -->
+<div class="col-xs-12 col-sm-6 col-md-4">
+<h3 class="cl-mon">76 <small>across South Africa</small></h3>
+</div>
 
-<div id="section1" class="row">
+<div class="col-xs-12 col-sm-6 col-md-4">
+<h3 class="cl-mon">20 <small>in the last three months</small></h3>
+</div>
 
-	<h2>
-		CLINICS BY PROVINCE
-	</h2>
+</div>
+<div class="row province-btns">
+<div class="col-xs-12 col-sm-12 text-center">
 
-	<div id="" class="row">
-
-		<div id="clinicProv" class="col-xs-12 col-md-6">	
-
-		<div class="btn-group-vertical" role="group" aria-label="...">
-			<button id="EC" type="button" class="btn btn-default">Eastern Cape</button>
-			<button id="FS" type="button" class="btn btn-default">Free State</button>
-			<button id="GT" type="button" class="btn btn-default">Gauteng</button>
-		</div>
-
-		</div>
-
-		<div id="clinicProvUnique" class="col-xs-12 col-md-6">
-
-		<div class="panel panel-default">
-				
-		<div id="infoEC" style=""> <!-- start EC -->
-				<div class="panel-heading">
-					<h4>Eastern Cape</h4>
-				</div>
-	  			
-	  			<div class="panel-body">
-	    			<p>
-
-	    				<span class="glyphicon glyphicon-list-alt"></span>&nbsp; 16
-	    				<br>clinics monitored
-
-	    			</p>
-	    			<p>
-		    			<span class="glyphicon glyphicon-time"></span>&nbsp; 5
-		    			<br>clinics monitored in the last three months
-	    			</p>
-	  			</div>
-
-	  	</div> <!-- end EC -->
-
-		<div id="infoFS" style="display:none;"> <!-- start FS -->
-				<div class="panel-heading">
-					<h4>Free State</h4>
-				</div>
-	  			
-	  			<div class="panel-body">
-	    			<p>
-
-	    				<span class="glyphicon glyphicon-list-alt"></span>&nbsp; 3
-	    				<br>clinics monitored
-
-	    			</p>
-	    			<p>
-		    			<span class="glyphicon glyphicon-time"></span>&nbsp; 2
-		    			<br>clinics monitored in the last three months
-	    			</p>
-	  			</div>
-
-	  	</div> <!-- end FS -->
-
-		<div id="infoGT" style="display:none;"> <!-- start GT -->
-				<div class="panel-heading">
-					<h4>Gauteng</h4>
-				</div>
-	  			
-	  			<div class="panel-body">
-	    			<p>
-
-	    				<span class="glyphicon glyphicon-list-alt"></span>&nbsp; 15
-	    				<br>clinics monitored
-
-	    			</p>
-	    			<p>
-		    			<span class="glyphicon glyphicon-time"></span>&nbsp; 5
-		    			<br>clinics monitored in the last three months
-	    			</p>
-	  			</div>
-
-	  	</div> <!-- end GT -->
-
-			</div>	
-		</div>
-
-	</div> <!-- end of row -->
-
-
-</div> <!-- end  section1 -->
-
-
-<div id="section2" class="row">
-
-<h2>MOST COMMON STOCKOUTS</h2>
-
-<div id="stockConsistent" class="col-xs-12 col-md-6">
-
-	<h4>
-		CONSISTENTLY IN STOCK
-	</h4>
-	
-	<ul class="list-group">
-		<li class="list-group-item">
-			Adrenaline 1 mg/ml injection <span class="dosage">(1 mL ampoule)</span>
-		</li>
-		<li class="list-group-item">
-			Amoxicillin 125 mg/5ml suspension <span class="dosage">(75 or 100 mL)</span>
-		</li>
-		<li class="list-group-item">
-			Hydrochlorothiazide 12.5 or 25 mg tablets <span class="dosage">(28 tablets)</span>
-		</li>
-		<li class="list-group-item">
-			Insulin soluble 100IU/ml injection <span class="dosage">(10 mL vial)</span>
-		</li>
-		<li class="list-group-item">
-			Isoniazid 300 mg tablet <span class="dosage">(28 tablets)</span>
-		</li>
-		<li class="list-group-item">
-			Medroxyprogesterone injection 150 mg <span class="dosage">(1 mL vial)</span>
-		</li>
-		<li class="list-group-item">
-			Metformin 500 mg or 850 mg tablets <span class="dosage">(56 or 84 tablets)</span>
-		</li>
-		<li class="list-group-item">
-			Tetanus toxoid vaccine <span class="dosage">(10 doses)</span>
-		</li>
-	</ul>
-
-</div> <!-- end stockOverview -->
-
-
-<div id="stockWorst" class="col-xs-12 col-md-6">
-	
-	<h4 style="font-family: 'Open Sans';">
-		WORST OUT OF STOCK
-	</h4>
-	
-	<ul class="list-group">
-		<li class="list-group-item">
-			Paracetamol 500 mg tablets <span class="dosage">(10 or 20 tablets)</span>
-		</li>
-		<li class="list-group-item">
-			Abacavir 20 mg/mL solution <span class="dosage">(240 mL)</span>
-		</li>
-		<li class="list-group-item">
-			Lamivudine 10 mg/mL solution <span class="dosage">(240 mL)</span>
-		</li>
-		<li class="list-group-item">
-			DTaP-IPV/Hib (Pentavalent) Vaccine <span class="dosage">(EPI)</span>
-		</li>
-		<li class="list-group-item">
-			Cefixime 400 mg capsules <span class="dosage">(1 capsule)</span>
-		</li>
-	</ul>
-
-
-</div> <!-- end stockContent -->
-
-
-</div> <!-- end  section2 -->
-
-<div id="section3" class="row">
-
-<div id="stockTrends" class="col-xs-12 col-md-8 col-md-offset-2">
-
-	
-  <div id="curve_chart" style="width: 900px; height: 500px"></div>
+ <div class="btn-group">
+  <a onclick="provinceClinicsTotal('16'); provinceClinicsThree('5')" type="button" class="btn btn-default prv-btn active">Eastern Cape</a>
+  <a onclick="provinceClinicsTotal('3'); provinceClinicsThree('2')" type="button" class="btn btn-default prv-btn">Free State</a>
+  <a onclick="provinceClinicsTotal('15'); provinceClinicsThree('5')" type="button" class="btn btn-default prv-btn">Gauteng</a>
+  <a onclick="provinceClinicsTotal('4'); provinceClinicsThree('0')" type="button" class="btn btn-default prv-btn">KwaZulu-Natal</a>
+  <a onclick="provinceClinicsTotal('11'); provinceClinicsThree('2')" type="button" class="btn btn-default prv-btn">Limpopo</a>
+  <a onclick="provinceClinicsTotal('10'); provinceClinicsThree('4')" type="button" class="btn btn-default prv-btn">Mpumalanga</a>
+  <a onclick="provinceClinicsTotal('5'); provinceClinicsThree('0')" type="button" class="btn btn-default prv-btn">North West</a>
+  <a onclick="provinceClinicsTotal('10'); provinceClinicsThree('2')" type="button" class="btn btn-default prv-btn">Northern Cape</a>
+  <a onclick="provinceClinicsTotal('7'); provinceClinicsThree('1')" type="button" class="btn btn-default prv-btn">Western Cape</a>
+</div>
 
 </div>
 
 </div>
 
-<div id="dataDL" class="col-xs-12">
+<div class="row province-btns">
 
-	<h2>
-		DOWNLOAD THE DATA
-	</h2>
+<div class="col-xs-12 col-sm-4 province-data">
+<br class="hidden-xs">
+<h3 id="prv-cli-total">16 <small>clinics monitored</small></h3>
+<h3 id="prv-cli-three">5 <small>in the last three months</small></h3>
+</div>
 
-	<button type="button" class="btn btn-primary btn-lg" style="background-color:transparent;color:#EC7F24;font-weight:bold;border-color:#EC7F24; border-radius:0px;font-size:14px;">
+<div class="col-xs-12 col-sm-8">
+
+<div id="curve_chart" style="width: 100%; height: 300px"></div>
+
+</div>
+
+</div>
+
+
+
+<div class="row">
+
+</div>
+
+<div class="row">
+<h3>MOST COMMON STOCKOUTS</h3>
+</div>
+
+<div class="row">
+
+<div class="col-xs-12 col-md-6">
+  <table class="table">
+    <thead><tr><th>CONSISTENTLY IN STOCK</th></tr></thead>
+    <tbody>
+      <tr><td>Adrenaline 1 mg/ml injection <span class="dosage">(1 mL ampoule)</span></td></tr>
+      <tr><td>Amoxicillin 125 mg/5ml suspension <span class="dosage">(75 or 100 mL)</span></td></tr>
+      <tr><td>Hydrochlorothiazide 12.5 or 25 mg tablets <span class="dosage">(28 tablets)</span></td></tr>
+      <tr><td>Insulin soluble 100IU/ml injection <span class="dosage">(10 mL vial)</span></td></tr>
+      <tr><td>Isoniazid 300 mg tablet <span class="dosage">(28 tablets)</span></td></tr>
+      <tr><td>Medroxyprogesterone injection 150 mg <span class="dosage">(1 mL vial)</span></td></tr>
+      <tr><td>Metformin 500 mg or 850 mg tablets <span class="dosage">(56 or 84 tablets)</span></td></tr>
+      <tr><td>Tetanus toxoid vaccine <span class="dosage">(10 doses)</span></td></tr>      
+    </tbody>
+  </table>
+</div>
+
+<div class="col-xs-12 col-md-6">
+	  <table class="table">
+    <thead><tr><th>WORST OUT OF STOCK</th></tr></thead>	  
+    <tbody>
+      <tr><td>Paracetamol 500 mg tablets <span class="dosage">(10 or 20 tablets)</span></td></tr>
+      <tr><td>Abacavir 20 mg/mL solution <span class="dosage">(240 mL)</span></td></tr>
+      <tr><td>Lamivudine 10 mg/mL solution <span class="dosage">(240 mL)</span></td></tr>
+      <tr><td>DTaP-IPV/Hib (Pentavalent) Vaccine <span class="dosage">(EPI)</span></td></tr>
+      <tr><td>Cefixime 400 mg capsules <span class="dosage">(1 capsule)</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<div id="container" class="col-sm-12 col-md-6 col-md-offset-3">
+
+	<button class="btn btn-default btn-lg" style="background-color:transparent;color:#EC7F24;font-weight:bold;border-color:#EC7F24; border-radius:0px;font-size:14px;">
 		<span class="glyphicon glyphicon-save" aria-hidden-"true"></span>&nbsp;&nbsp;ALL DATA
 	</button>
 
-</div> <!-- end of dataDL -->
-
 </div>
-
-
-<script type="text/javascript">
-$( "#FS" ).click(function() {
-	$("#infoEC").hide();
-	$("#infoGT").hide();
-  	$( "#infoFS" ).toggle();
-});
-
-$( "#EC" ).click(function() {
-	$("#infoFS").hide();
-	$("#infoGT").hide();
-  	$( "#infoEC" ).toggle();
-});
-
-$( "#GT" ).click(function() {
-	$("#infoFS").hide();
-	$("#infoEC").hide();
-  	$( "#infoGT" ).toggle();
-});
-
-</script>
-
 </body>
 
 </html>

@@ -1,66 +1,81 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans|Lato);
-
-/*	COLOR
-	golden yellow 	#F9AC2C
-	burnt orange 	#EC7F24
-	dark grey 		#5B5B5B
-	orange 			#ED8522
-*/
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono);
 
 html, body {
-	width: 100%;
-	font-family: 'Open Sans', sans-serif;
-}
-
-h1 {
-	font-size:75px;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: bold; 
-}
-
-h4 {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 14px;
-	font-weight: bold;
-}
-
-p {
-	font-size: 14px;
 	font-family: 'Lato', sans-serif;
+	height: 100%;
+	width: 960px;
 }
 
-.col-md-8 {
-	margin-left:auto;
-	margin-right:auto;
+html {
+    display: table;
+    margin: auto;
 }
 
-#header {
-	background-color: #F9AC2C;
-	padding: 20px;
-	color: #fff;
+body {
+    display: table-cell;
+    vertical-align: middle;
 }
 
-.figures {
-	font-family: 'Open Sans', sans-serif;
-	font-weight: bold;
+a {
 	color: #EC7F24;
 }
 
-#inStock {
-	/*background-color: #EC7F24;*/
+.dosage {
+	font-family: 'Ubuntu Mono', 'Lato', sans-serif;
+	font-size: 12px; 
 }
 
-#inStock h4 {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 14px;
-	font-weight: bold;
+.clinic-check {
+	background-color: #EC7F24;
+	color: #FFF;
 }
 
-#inStock ul li {
-	font-family: 'Lato', sans-serif;
-	list-style-type: none;
+.row {
+	margin: 0;
 }
 
-.glyphicon {
-    font-size: 22px;
+.cl-mon {
+	margin-bottom: 20px;
+}
+
+.cl-mon small {
+	color: #FFF;
+}
+
+.btn {
+	padding: 4px 7px 6px 7px;
+}
+
+.province-btns {
+	margin-top: 10px;
+	border: none;
+}
+
+.prv-btn {
+	background-color: #f0f0f0;
+	border: none;
+}
+
+.prv-btn.active, .prv-btn.active:hover, .prv-btn:hover {
+	background-color: #EC7F24;
+	color: #FFF;	
+	box-shadow: none;
+}
+
+.btn-group-vertical > .btn, .btn-group > .btn {
+	float: none;
+}
+
+.province-data {
+	text-align: center;
+}
+
+.province-data h3 {
+	font-size: 2.7em;
+	color: #EC7F24;
+}
+
+.province-data small {
+	font-size: 0.4em;
 }
