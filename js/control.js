@@ -1,10 +1,10 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Month', 'Percentage'],
-          ['January',  95.5],
-          ['February',  96.8],
-          ['March',  95.2],
-          ['April',  94.7]
+          ['January', 95.5],
+          ['February', 96.8],
+          ['March', 95.2],
+          ['April', 94.7]
         ]);
 
         var options = {
@@ -13,7 +13,10 @@
           colors: ['#EC7F24'],
           chartArea: {'width': '80%', 'height': '80%'},          
           titleTextStyle: {color:'#333', fontSize: 24, fontName: 'Lato'},
-          tooltip: {textStyle: {color:'#333'}}
+          tooltip: {textStyle: {color:'#333'}},
+          vAxis: {
+                format: '#\'%\'',
+            },          
         };
 
         var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
