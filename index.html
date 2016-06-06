@@ -9,17 +9,7 @@
     <title>Medicine Stockout</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
-	<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
-		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-	<script src="js/control.js"></script>
-	<script src="https://www.gstatic.com/charts/loader.js"></script>
-    <script>
-    	google.charts.load('current', {'packages':['corechart']});
-    	google.charts.setOnLoadCallback(drawChart);
-    </script>
 </head>
 
 <body>
@@ -35,7 +25,7 @@
 <div class="row clinic-check">
 
 <div class="col-xs-12 col-md-4">
-<h3 class="cl-mon"><i class="fa fa-list-alt fa-fw" aria-hidden="true"></i> CLINICS MONITORED</h3>
+<h3 class="cl-mon"><span class="glyphicon glyphicon-list-alt" aria-hidden-"true"></span> CLINICS MONITORED</h3>
 </div>
 
 <div class="col-xs-12 col-sm-6 col-md-4">
@@ -51,15 +41,15 @@
 <div class="col-xs-12 col-sm-12 text-center">
 
  <div class="btn-group">
-  <a onclick="provinceClinicsTotal('16'); provinceClinicsThree('5')" type="button" class="btn btn-default prv-btn active">Eastern Cape</a>
-  <a onclick="provinceClinicsTotal('3'); provinceClinicsThree('2')" type="button" class="btn btn-default prv-btn">Free State</a>
-  <a onclick="provinceClinicsTotal('15'); provinceClinicsThree('5')" type="button" class="btn btn-default prv-btn">Gauteng</a>
-  <a onclick="provinceClinicsTotal('4'); provinceClinicsThree('0')" type="button" class="btn btn-default prv-btn">KwaZulu-Natal</a>
-  <a onclick="provinceClinicsTotal('11'); provinceClinicsThree('2')" type="button" class="btn btn-default prv-btn">Limpopo</a>
-  <a onclick="provinceClinicsTotal('10'); provinceClinicsThree('4')" type="button" class="btn btn-default prv-btn">Mpumalanga</a>
-  <a onclick="provinceClinicsTotal('5'); provinceClinicsThree('0')" type="button" class="btn btn-default prv-btn">North West</a>
-  <a onclick="provinceClinicsTotal('10'); provinceClinicsThree('2')" type="button" class="btn btn-default prv-btn">Northern Cape</a>
-  <a onclick="provinceClinicsTotal('7'); provinceClinicsThree('1')" type="button" class="btn btn-default prv-btn">Western Cape</a>
+  <a onclick="provinceClinicsTotal('16'); provinceClinicsThree('5'); changeImage('img/ec.png')" type="button" class="btn btn-default prv-btn active">Eastern Cape</a>
+  <a onclick="provinceClinicsTotal('3'); provinceClinicsThree('2'); changeImage('img/fs.png')" type="button" class="btn btn-default prv-btn">Free State</a>
+  <a onclick="provinceClinicsTotal('15'); provinceClinicsThree('5'); changeImage('img/gau.png')" type="button" class="btn btn-default prv-btn">Gauteng</a>
+  <a onclick="provinceClinicsTotal('4'); provinceClinicsThree('0'); changeImage('img/kzn.png')" type="button" class="btn btn-default prv-btn">KwaZulu-Natal</a>
+  <a onclick="provinceClinicsTotal('11'); provinceClinicsThree('2'); changeImage('img/lim.png')" type="button" class="btn btn-default prv-btn">Limpopo</a>
+  <a onclick="provinceClinicsTotal('10'); provinceClinicsThree('4'); changeImage('img/mpu.png')" type="button" class="btn btn-default prv-btn">Mpumalanga</a>
+  <a onclick="provinceClinicsTotal('5'); provinceClinicsThree('0'); changeImage('img/nw.png')" type="button" class="btn btn-default prv-btn">North West</a>
+  <a onclick="provinceClinicsTotal('10'); provinceClinicsThree('2'); changeImage('img/nc.png')" type="button" class="btn btn-default prv-btn">Northern Cape</a>
+  <a onclick="provinceClinicsTotal('7'); provinceClinicsThree('1'); changeImage('img/wc.png')" type="button" class="btn btn-default prv-btn">Western Cape</a>
 </div>
 
 </div>
@@ -72,10 +62,11 @@
 <br class="hidden-xs">
 <h3 id="prv-cli-total">16 <small>clinics monitored</small></h3>
 <h3 id="prv-cli-three">5 <small>in the last three months</small></h3>
+<img id="prv-image" src="img/ec.png">
 </div>
 
-<div class="col-xs-12 col-sm-8">
-
+<div class="col-xs-12 col-sm-8 chart">
+<h3 class="chart-title">TRENDS IN MEDICINE STOCKOUTS</h3>
 <div id="curve_chart" style="width: 100%; height: 300px"></div>
 
 </div>
@@ -94,7 +85,7 @@
 
 <div class="row">
 
-<div class="col-xs-12 col-md-6">
+<div class="col-xs-12 col-md-6" style="padding-left: 0; padding-right: 0">
   <table class="table">
     <thead><tr><th>CONSISTENTLY IN STOCK</th></tr></thead>
     <tbody>
@@ -110,7 +101,7 @@
   </table>
 </div>
 
-<div class="col-xs-12 col-md-6">
+<div class="col-xs-12 col-md-6" style="padding-left: 0; padding-right: 0">
 	  <table class="table">
     <thead><tr><th>WORST OUT OF STOCK</th></tr></thead>	  
     <tbody>
@@ -125,13 +116,19 @@
 
 </div>
 
-<div id="container" class="col-sm-12 col-md-6 col-md-offset-3">
-
-	<button class="btn btn-default btn-lg" style="background-color:transparent;color:#EC7F24;font-weight:bold;border-color:#EC7F24; border-radius:0px;font-size:14px;">
-		<span class="glyphicon glyphicon-save" aria-hidden-"true"></span>&nbsp;&nbsp;ALL DATA
-	</button>
-
+<div class="row">
+<a class="btn btn-default download"><span class="glyphicon glyphicon-save" aria-hidden-"true"></span> Download data</a>
 </div>
+
+<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="js/control.js"></script>
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+    </script>
+
 </body>
 
 </html>

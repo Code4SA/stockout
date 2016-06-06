@@ -8,12 +8,12 @@
         ]);
 
         var options = {
-          title: 'TRENDS IN MEDICINE STOCKOUTS',
           curveType: 'none',
-          legend: { position: 'bottom' },
+          legend: { position: 'none' },
           colors: ['#EC7F24'],
-          titleTextStyle: {color:'#EC7F24', fontSize: 20, fontName: 'Lato'},
-          tooltip: {textStyle: {color:'#CA640F'}}
+          chartArea: {'width': '80%', 'height': '80%'},          
+          titleTextStyle: {color:'#333', fontSize: 24, fontName: 'Lato'},
+          tooltip: {textStyle: {color:'#333'}}
         };
 
         var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
@@ -29,8 +29,12 @@ function provinceClinicsThree(number) {
   document.getElementById("prv-cli-three").innerHTML = number + " <small>in the last three months</small>";
 };
 
+function changeImage(a) {
+  document.getElementById("prv-image").src=a;
+};
 
-$(".prv-btn").click(function() {
-  $(".prv-btn").removeClass("active");
+
+$("a.prv-btn").click(function() {
+  $("a.prv-btn").removeClass("active");
   $(this).addClass("active");
 });

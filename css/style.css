@@ -4,7 +4,6 @@
 html, body {
 	font-family: 'Lato', sans-serif;
 	height: 100%;
-	width: 960px;
 }
 
 html {
@@ -32,6 +31,7 @@ a {
 }
 
 .row {
+	padding: 0px 10px 0 10px;
 	margin: 0;
 }
 
@@ -55,9 +55,11 @@ a {
 .prv-btn {
 	background-color: #f0f0f0;
 	border: none;
+	margin-bottom: 5px;
+	border-radius: 0;
 }
 
-.prv-btn.active, .prv-btn.active:hover, .prv-btn:hover {
+.prv-btn:hover, .prv-btn.active:hover, .prv-btn.active, .prv-btn:focus {
 	background-color: #EC7F24;
 	color: #FFF;	
 	box-shadow: none;
@@ -65,10 +67,6 @@ a {
 
 .btn-group-vertical > .btn, .btn-group > .btn {
 	float: none;
-}
-
-.province-data {
-	text-align: center;
 }
 
 .province-data h3 {
@@ -79,3 +77,41 @@ a {
 .province-data small {
 	font-size: 0.4em;
 }
+
+.province-data img {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	z-index: -1;
+}
+
+.download {
+	border-color: #EC7F24;
+	color: #EC7F24;
+	margin-bottom: 10px;
+}
+
+.download.active:hover, .download:hover, .download.active, .download:focus {
+	background-color: #EC7F24;
+	color: #FFF;	
+	box-shadow: none;
+	border-color: #EC7F24;	
+}
+
+#curve_chart text {
+	font-weight: 300 !important;
+}
+
+@media (min-width: 756px) {
+	.chart-title {
+		text-align: center;
+		margin-bottom: 0
+	}	
+}
+
+@media (max-width: 756px) {
+	.chart {
+		padding: 0;
+	}	
+}
+
