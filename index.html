@@ -29,7 +29,7 @@
 </div>
 
 <div class="col-xs-12 col-sm-6 col-md-4">
-<h3 class="cl-mon">76 <small>across South Africa</small></h3>
+<h3 class="cl-mon">76 <small>since 2014</small></h3>
 </div>
 
 <div class="col-xs-12 col-sm-6 col-md-4">
@@ -41,15 +41,15 @@
 <div class="col-xs-12 col-sm-12 text-center">
 
  <div class="btn-group">
-  <a onclick="provinceClinicsTotal('16'); provinceClinicsThree('5'); changeImage('img/ec.png')" type="button" class="btn btn-default prv-btn active">Eastern Cape</a>
-  <a onclick="provinceClinicsTotal('3'); provinceClinicsThree('2'); changeImage('img/fs.png')" type="button" class="btn btn-default prv-btn">Free State</a>
-  <a onclick="provinceClinicsTotal('15'); provinceClinicsThree('5'); changeImage('img/gau.png')" type="button" class="btn btn-default prv-btn">Gauteng</a>
-  <a onclick="provinceClinicsTotal('4'); provinceClinicsThree('0'); changeImage('img/kzn.png')" type="button" class="btn btn-default prv-btn">KwaZulu-Natal</a>
-  <a onclick="provinceClinicsTotal('11'); provinceClinicsThree('2'); changeImage('img/lim.png')" type="button" class="btn btn-default prv-btn">Limpopo</a>
-  <a onclick="provinceClinicsTotal('10'); provinceClinicsThree('4'); changeImage('img/mpu.png')" type="button" class="btn btn-default prv-btn">Mpumalanga</a>
-  <a onclick="provinceClinicsTotal('5'); provinceClinicsThree('0'); changeImage('img/nw.png')" type="button" class="btn btn-default prv-btn">North West</a>
-  <a onclick="provinceClinicsTotal('10'); provinceClinicsThree('2'); changeImage('img/nc.png')" type="button" class="btn btn-default prv-btn">Northern Cape</a>
-  <a onclick="provinceClinicsTotal('7'); provinceClinicsThree('1'); changeImage('img/wc.png')" type="button" class="btn btn-default prv-btn">Western Cape</a>
+  <a onclick="provinceClinicsTotal('16'); provinceClinicsThree('5'); changeImage('img/ec.png'); provinceName('Eastern Cape')" type="button" class="btn btn-default prv-btn active">Eastern Cape</a>
+  <a onclick="provinceClinicsTotal('3'); provinceClinicsThree('2'); changeImage('img/fs.png'); provinceName('Free State')" type="button" class="btn btn-default prv-btn">Free State</a>
+  <a onclick="provinceClinicsTotal('15'); provinceClinicsThree('5'); changeImage('img/gau.png'); provinceName('Gauteng')" type="button" class="btn btn-default prv-btn">Gauteng</a>
+  <a onclick="provinceClinicsTotal('4'); provinceClinicsThree('0'); changeImage('img/kzn.png'); provinceName('KwaZulu-Natal')" type="button" class="btn btn-default prv-btn">KwaZulu-Natal</a>
+  <a onclick="provinceClinicsTotal('11'); provinceClinicsThree('2'); changeImage('img/lim.png'); provinceName('Limpopo')" type="button" class="btn btn-default prv-btn">Limpopo</a>
+  <a onclick="provinceClinicsTotal('10'); provinceClinicsThree('4'); changeImage('img/mpu.png'); provinceName('Mpumalanga')" type="button" class="btn btn-default prv-btn">Mpumalanga</a>
+  <a onclick="provinceClinicsTotal('5'); provinceClinicsThree('0'); changeImage('img/nw.png'); provinceName('North West')" type="button" class="btn btn-default prv-btn">North West</a>
+  <a onclick="provinceClinicsTotal('10'); provinceClinicsThree('2'); changeImage('img/nc.png'); provinceName('Northern Cape')" type="button" class="btn btn-default prv-btn">Northern Cape</a>
+  <a onclick="provinceClinicsTotal('7'); provinceClinicsThree('1'); changeImage('img/wc.png'); provinceName('Western Cape')" type="button" class="btn btn-default prv-btn">Western Cape</a>
 </div>
 
 </div>
@@ -60,13 +60,14 @@
 
 <div class="col-xs-12 col-sm-4 province-data">
 <br class="hidden-xs">
-<h3 id="prv-cli-total">16 <small>clinics monitored</small></h3>
+<h3 id="prv-name">Eastern Cape</h3>
+<h3 id="prv-cli-total">16 <small>since 2014</small></h3>
 <h3 id="prv-cli-three">5 <small>in the last three months</small></h3>
 <img id="prv-image" src="img/ec.png">
 </div>
 
 <div class="col-xs-12 col-sm-8 chart">
-<h3 class="chart-title">MEDICINES IN STOCK</h3>
+<h3 class="chart-title">MEDICINES IN STOCK NATIONWIDE</h3>
 <div id="curve_chart" style="width: 100%; height: 300px"></div>
 
 </div>
@@ -80,7 +81,7 @@
 </div>
 
 <div class="row">
-<h3>MOST COMMON STOCKOUTS</h3>
+<h3>MOST COMMON STOCKOUTS 2016</h3>
 </div>
 
 <div class="row">
@@ -117,7 +118,8 @@
 </div>
 
 <div class="row">
-<a class="btn btn-default download"><span class="glyphicon glyphicon-save" aria-hidden-"true"></span> Download data</a>
+<a href="https://docs.google.com/spreadsheets/d/18tgq_5hsyKPq5WqczwYdVpYWqV2ih88htq69wNlWClA/export?format=csv" class="btn btn-default download"><span class="glyphicon glyphicon-save" aria-hidden-"true"></span> Download July 2014 - July 2015 data</a>
+<a href="https://docs.google.com/spreadsheets/d/1ZZrb4urV7GmPUd6VFHoqNKplpMcY4TzkMz5PeXU3TX0/export?format=csv" class="btn btn-default download"><span class="glyphicon glyphicon-save" aria-hidden-"true"></span> Download December 2015 - May 2016 data</a>
 </div>
 
 <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>

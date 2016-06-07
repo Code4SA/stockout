@@ -112,6 +112,12 @@ a {
 @media (max-width: 756px) {
 	.chart {
 		padding: 0;
-	}	
+	}
+	.province-data img {
+	position: absolute;
+	bottom: 0;
+	right: 15%;
+	z-index: -1;
+	}
 }
 

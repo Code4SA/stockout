@@ -25,7 +25,7 @@
       };  
 
 function provinceClinicsTotal(number) {
-  document.getElementById("prv-cli-total").innerHTML = number + " <small>clinics monitored</small>";
+  document.getElementById("prv-cli-total").innerHTML = number + " <small>since 2014</small>";
 };
 
 function provinceClinicsThree(number) {
@@ -34,6 +34,10 @@ function provinceClinicsThree(number) {
 
 function changeImage(a) {
   document.getElementById("prv-image").src=a;
+};
+
+function provinceName(name) {
+  document.getElementById("prv-name").innerHTML = name;
 };
 
 
