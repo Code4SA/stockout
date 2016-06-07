@@ -28,8 +28,8 @@ function provinceClinicsTotal(number) {
   document.getElementById("prv-cli-total").innerHTML = number + " <small>since 2014</small>";
 };
 
-function provinceClinicsThree(number) {
-  document.getElementById("prv-cli-three").innerHTML = number + " <small>in the last three months</small>";
+function provinceClinics2016(number) {
+  document.getElementById("prv-cli-three").innerHTML = number + " <small>in 2016</small>";
 };
 
 function changeImage(a) {
