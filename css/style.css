@@ -102,13 +102,13 @@ a {
 	font-weight: 300 !important;
 }
 
-@media (min-width: 756px) {
+@media (min-width: 768px) {
 	.chart-title {
 		margin-bottom: 0
 	}	
 }
 
-@media (max-width: 756px) {
+@media (max-width: 768px) {
 	.chart {
 		padding: 0;
 	}
