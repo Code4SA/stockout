@@ -40,7 +40,6 @@ function provinceName(name) {
   document.getElementById("prv-name").innerHTML = name;
 };
 
-
 $("a.prv-btn").click(function() {
   $("a.prv-btn").removeClass("active");
   $(this).addClass("active");
