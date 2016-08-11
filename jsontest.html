@@ -1,0 +1,50 @@
+<html>
+   <head>
+
+      <title>The jQuery Example</title>
+      
+      <script type = "text/javascript" 
+         src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script type="text/javascript">
+      $(document).ready(function (){
+          $("#btn382").click(function(){        
+              /* set no cache */
+              $.ajaxSetup({ cache: false });
+       
+              $.getJSON("result.json", function(data){ 
+                  var html = [];
+       
+                  /* loop through array */
+                  $.each(data, function(index, d){            
+                      html.push("Country Stats : ", d.country_stats, ", ",
+                              "Instock : ", d.medicine_instock, ", ",
+                              "Monthly Availability : ", d.monthly_availability, ", ",
+                              "Stockout : ", d.medicine_stockouts, "<br>");
+                  });
+       
+       
+                  $("#div381").html(html.join('')).css("background-color", "orange");
+              }).error(function(jqXHR, textStatus, errorThrown){ /* assign handler */
+                  /* alert(jqXHR.responseText) */
+                  alert("error occurred!");
+              });
+          });
+      });
+</script>
+
+   </head>
+	
+   <body>
+<a name="#ajax-getjson-example"></a>
+<div id="example-section38">    
+<div>Country Stats</div>
+<div id="div381"></div>
+<button id="btn382" type="button">Load data (json type)</button>
+</div>
+
+
+
+		
+   </body>
+	
+</html>
