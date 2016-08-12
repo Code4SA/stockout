@@ -13,14 +13,11 @@
        
               $.getJSON("result.json", function(data){ 
                   var html = [];
-       
+
                   /* loop through array */
-                  $.each(data, function(index, d){            
-                      html.push("Country Stats : ", d.country_stats, ", ",
-                              "Instock : ", d.medicine_instock, ", ",
-                              "Monthly Availability : ", d.monthly_availability, ", ",
-                              "Stockout : ", d.medicine_stockouts, "<br>");
-                  });
+                  $.each(data.medicines, function(index, d){            
+                      html.push("<li>" + d + "</li>");
+                  });                  
        
        
                   $("#div381").html(html.join('')).css("background-color", "orange");
