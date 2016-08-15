@@ -1,47 +1,91 @@
 <html>
-   <head>
+  <head>
 
-      <title>The jQuery Example</title>
+    <title>JSON Example</title>
       
-      <script type = "text/javascript" 
-         src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-      <script type="text/javascript">
-      $(document).ready(function (){
-          $("#btn382").click(function(){        
-              /* set no cache */
-              $.ajaxSetup({ cache: false });
-       
-              $.getJSON("result.json", function(data){ 
-                  var html = [];
+    <script type = "text/javascript" src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript">
+    
+    $(document).ready(function (){
+      var data = null;
 
-                  /* loop through array */
-                  $.each(data.medicines, function(index, d){            
-                      html.push("<li>" + d + "</li>");
-                  });                  
-       
-       
-                  $("#div381").html(html.join('')).css("background-color", "orange");
-              }).error(function(jqXHR, textStatus, errorThrown){ /* assign handler */
-                  /* alert(jqXHR.responseText) */
-                  alert("error occurred!");
-              });
-          });
+      $.getJSON("result.json", function(d){ 
+        data = d;
       });
+
+      /*  all provinces */
+
+      $("#mPu, #eCa, #nCa, #gTe, #fSt, #wCa, #nWe, #lMp").click(function(e){
+
+        var provinceIndex = null;
+        var html = [];
+        var medicineOut = [];
+        var medicineIn = [];
+        var medicineMonthly = [];
+
+        data.provinces.forEach(function(provinces,i) {
+          if(provinces.code === $(e.target).attr('data-id')) {
+            provinceIndex = i;
+          }
+        });
+
+        for(var key in data.provinces[provinceIndex].name) {
+          var provinceName = data.provinces[provinceIndex].name[key];
+
+          html.push(provinceName);
+        }
+
+        for(var key in data.provinces[provinceIndex].stats.monthly_availability) {
+          var monthlyAvailability = data.provinces[provinceIndex].stats.monthly_availability[key];
+
+          medicineMonthly.push("<tr><th>" + key + "</th><td>" + monthlyAvailability + "</td></tr>");
+        }
+
+        for(var key in data.provinces[provinceIndex].stats.medicine_instock) {
+          var medicineInstock = data.provinces[provinceIndex].stats.medicine_instock[key];
+
+          medicineIn.push("<li>" + key + "&nbsp;" + medicineInstock + "</li>");
+        }
+
+        for(var key in data.provinces[provinceIndex].stats.medicine_stockouts) {
+          var medicineStockouts = data.provinces[provinceIndex].stats.medicine_stockouts[key];
+
+          medicineOut.push("<li>" + key + "&nbsp;" + medicineStockouts + "</li>");
+        }
+
+        /*for(var key in data.provinces[provinceIndex].stats.medicine_stockouts) {
+          var medicineStockouts = data.provinces[provinceIndex].stats.medicine_stockouts[key];
+
+          $('#list').append("<li>" + key + "&nbsp;" + medicineStockouts + "</li>");
+        }*/
+
+        $('#tab').html(medicineMonthly);
+        $('#list1').html(medicineIn);
+        $('#list2').html(medicineOut);
+
+      });
+
+    });
 </script>
 
-   </head>
+</head>
 	
-   <body>
-<a name="#ajax-getjson-example"></a>
-<div id="example-section38">    
-<div>Country Stats</div>
-<div id="div381"></div>
-<button id="btn382" type="button">Load data (json type)</button>
-</div>
+<body>  
+  
+  <div>Country Stats</div>
 
+  <button id="mPu" type="button" data-id="MP">Mpumalanga</button>
+  <button id="eCa" type="button" data-id="EC">Eastern Cape</button>
+  <button id="nCa" type="button" data-id="NC">Northern Cape</button>
+  <button id="gTe" type="button" data-id="GT">Gauteng</button>
+  <button id="fSt" type="button" data-id="FS">Free State</button>
+  <button id="wCa" type="button" data-id="WC">Western Cape</button>
+  <button id="nWe" type="button" data-id="NW">North West</button>
+  <button id="lMp" type="button" data-id="LIM">Limpopo</button>
 
+  <table><tr id="tab"></tr></table>
+  <div><p>Medicine Stockin</p><ul id="list1"></ul></div>
+  <div><p>Medicine Stockout</p><ul id="list2"></ul></div>
 
-		
-   </body>
-	
+</body>
 </html>
