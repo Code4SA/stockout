@@ -19,6 +19,7 @@
 
         var provinceIndex = null;
         var html = [];
+        var provName = [];
         var medicineOut = [];
         var medicineIn = [];
         var medicineMonthly = [];
@@ -32,7 +33,7 @@
         for(var key in data.provinces[provinceIndex].name) {
           var provinceName = data.provinces[provinceIndex].name[key];
 
-          html.push(provinceName);
+          provName.push(provinceName);
         }
 
         for(var key in data.provinces[provinceIndex].stats.monthly_availability) {
@@ -59,6 +60,7 @@
           $('#list').append("<li>" + key + "&nbsp;" + medicineStockouts + "</li>");
         }*/
 
+        $('#nam').html(provName);
         $('#tab').html(medicineMonthly);
         $('#list1').html(medicineIn);
         $('#list2').html(medicineOut);
@@ -83,6 +85,7 @@
   <button id="nWe" type="button" data-id="NW">North West</button>
   <button id="lMp" type="button" data-id="LIM">Limpopo</button>
 
+  <p id="nam"></p>
   <table><tr id="tab"></tr></table>
   <div><p>Medicine Stockin</p><ul id="list1"></ul></div>
   <div><p>Medicine Stockout</p><ul id="list2"></ul></div>
