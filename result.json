@@ -1,1 +1,427 @@
-{"country_stats": {"medicine_instock": {"met": 99, "amosus": 98, "cex": 95, "lam": 88, "rif150": 95, "adr": 99, "car": 97, "partab": 91, "dta": 86, "med": 99, "cef": 68, "iso": 99, "amocap": 95, "tet": 99, "aba": 90, "rif60": 94, "sod": 96, "ins": 98, "ten": 98, "bec": 98, "parsyr": 98, "hyd": 98}, "monthly_availability": {"2016-06": 94.8051948051948, "2016-04": 94.73684210526315, "2016-05": 94.88636363636364, "2016-02": 96.81818181818181, "2016-03": 95.15151515151516, "2016-01": 95.45454545454545, "2015-12": 100.0}, "medicine_stockouts": {"amosus": 1, "cex": 4, "cef": 31, "rif150": 4, "hyd": 1, "car": 2, "partab": 8, "dta": 13, "lam": 11, "amocap": 4, "aba": 9, "rif60": 5, "sod": 3, "parsyr": 1, "ten": 1, "bec": 1, "ins": 1}}, "provinces": [{"code": "MP", "name": "Mpumalanga", "stats": {"medicine_instock": {"met": 17, "amosus": 17, "cex": 17, "lam": 17, "rif150": 17, "adr": 17, "car": 17, "partab": 17, "dta": 17, "med": 17, "cef": 17, "iso": 17, "amocap": 17, "tet": 17, "aba": 17, "rif60": 17, "sod": 17, "ins": 17, "ten": 17, "bec": 17, "parsyr": 17, "hyd": 17}, "monthly_availability": {"2016-06": 100.0, "2016-04": 100.0, "2016-05": 100.0, "2016-02": 100.0, "2016-03": 100.0, "2016-01": 100.0}, "medicine_stockouts": {}}}, {"code": "GT", "name": "Gauteng", "stats": {"medicine_instock": {"met": 16, "amosus": 16, "cex": 16, "lam": 16, "rif150": 15, "adr": 16, "car": 16, "partab": 16, "dta": 15, "med": 16, "cef": 8, "iso": 16, "amocap": 15, "tet": 16, "aba": 16, "rif60": 15, "sod": 15, "ins": 16, "ten": 16, "bec": 16, "parsyr": 15, "hyd": 16}, "monthly_availability": {"2016-04": 96.5909090909091, "2016-05": 93.18181818181817, "2016-02": 98.86363636363636, "2016-03": 93.18181818181817, "2016-01": 95.45454545454545}, "medicine_stockouts": {"cef": 8, "rif60": 1, "sod": 1, "amocap": 1, "dta": 1, "rif150": 1, "parsyr": 1}}}, {"code": "NW", "name": "North West", "stats": {"medicine_instock": {"met": 12, "amosus": 12, "cex": 12, "lam": 2, "rif150": 11, "adr": 12, "car": 11, "partab": 11, "dta": 12, "med": 12, "cef": 3, "iso": 12, "amocap": 11, "tet": 12, "aba": 3, "rif60": 11, "sod": 12, "ins": 12, "ten": 12, "bec": 12, "parsyr": 12, "hyd": 12}, "monthly_availability": {"2016-06": 81.81818181818183, "2016-04": 88.63636363636364, "2016-05": 84.0909090909091, "2016-02": 90.9090909090909, "2016-03": 88.63636363636364, "2016-01": 90.9090909090909}, "medicine_stockouts": {"cef": 9, "amocap": 1, "aba": 9, "lam": 10, "rif60": 1, "car": 1, "partab": 1, "rif150": 1}}}, {"code": "FS", "name": "Free State", "stats": {"medicine_instock": {"met": 10, "amosus": 10, "cex": 8, "med": 10, "rif150": 10, "adr": 10, "car": 9, "partab": 4, "dta": 7, "lam": 10, "cef": 8, "iso": 10, "amocap": 10, "tet": 10, "aba": 10, "rif60": 10, "sod": 10, "ins": 9, "ten": 9, "bec": 10, "parsyr": 10, "hyd": 9}, "monthly_availability": {"2016-06": 88.63636363636364, "2016-04": 86.36363636363636, "2016-05": 95.45454545454545, "2016-02": 95.45454545454545, "2016-03": 95.45454545454545}, "medicine_stockouts": {"cex": 2, "cef": 2, "hyd": 1, "ten": 1, "car": 1, "partab": 6, "dta": 3, "ins": 1}}}, {"code": "WC", "name": "Western Cape", "stats": {"medicine_instock": {"met": 4, "amosus": 4, "cex": 4, "lam": 4, "rif150": 4, "adr": 4, "car": 4, "partab": 4, "dta": 1, "med": 4, "iso": 4, "amocap": 4, "tet": 4, "aba": 4, "rif60": 4, "sod": 3, "ins": 4, "ten": 4, "bec": 3, "parsyr": 4, "hyd": 4}, "monthly_availability": {"2016-02": 90.9090909090909, "2016-01": 88.63636363636364}, "medicine_stockouts": {"cef": 4, "bec": 1, "dta": 3, "sod": 1}}}, {"code": "LIM", "name": "Limpopo", "stats": {"medicine_instock": {"met": 10, "amosus": 10, "cex": 10, "lam": 9, "rif150": 10, "adr": 10, "car": 10, "partab": 10, "dta": 9, "med": 10, "cef": 9, "iso": 10, "amocap": 10, "tet": 10, "aba": 10, "rif60": 10, "sod": 9, "ins": 10, "ten": 10, "bec": 10, "parsyr": 10, "hyd": 10}, "monthly_availability": {"2016-06": 100.0, "2016-04": 100.0, "2016-05": 97.72727272727273, "2016-02": 93.18181818181817, "2016-03": 100.0}, "medicine_stockouts": {"cef": 1, "lam": 1, "dta": 1, "sod": 1}}}, {"code": "NC", "name": "Northern Cape", "stats": {"medicine_instock": {"met": 8, "amosus": 7, "cex": 7, "lam": 8, "rif150": 6, "adr": 8, "car": 8, "partab": 8, "dta": 3, "med": 8, "cef": 1, "iso": 8, "amocap": 6, "tet": 8, "aba": 8, "rif60": 5, "sod": 8, "ins": 8, "ten": 8, "bec": 8, "parsyr": 8, "hyd": 8}, "monthly_availability": {"2016-06": 93.18181818181817, "2016-04": 81.81818181818183, "2016-05": 88.63636363636364, "2016-03": 88.63636363636364}, "medicine_stockouts": {"cef": 7, "rif60": 3, "amosus": 1, "amocap": 2, "dta": 5, "rif150": 2, "cex": 1}}}, {"code": "EC", "name": "Eastern Cape", "stats": {"medicine_instock": {"met": 22, "amosus": 22, "cex": 21, "med": 22, "rif150": 22, "adr": 22, "car": 22, "partab": 21, "dta": 22, "lam": 22, "cef": 22, "iso": 22, "amocap": 22, "tet": 22, "aba": 22, "rif60": 22, "sod": 22, "ins": 22, "ten": 22, "bec": 22, "parsyr": 22, "hyd": 22}, "monthly_availability": {"2016-06": 100.0, "2016-04": 100.0, "2016-05": 100.0, "2016-02": 100.0, "2016-03": 98.48484848484848, "2016-01": 97.72727272727273, "2015-12": 100.0}, "medicine_stockouts": {"partab": 1, "cex": 1}}}], "total_clinics": 27, "medicines": {"aba": "Abacavir 20 mg/mL solution (240 mL)", "adr": "Adrenaline 1 mg/ml injection (1 mL ampoule)", "amosus": "Amoxicillin 125 mg/5ml suspension (75 or 100 mL)", "amocap": "Amoxicillin 250 mg or 500 mg capsules (15 capsules)", "azi": "Azithromycin 500mg", "bec": "Beclomethasone 50 mcg or 100 mcg inhaler (200 inhalations)", "cex": "Ceftriaxone injection 250 mg or 500 mg (vial)", "hex": "Hexavalent (Vaccine)", "hyd": "Hydrochlorothiazide 12.5 or 25 mg tablets (28 tablets)", "ins": "Insulin soluble 100IU/ml injection (10 mL vial)", "iso": "Isoniazid 300 mg tablet (28 tablets)", "lam": "Lamivudine 10 mg/mL solution (240 mL)", "med": "Medroxyprogesterone injection 150 mg (1 mL vial)", "met": "Metformin 500 mg or 850 mg tablets (56 or 84 tablets)", "partab": "Paracetamol 500 mg tablets (10 or 20 tablets)", "parsyr": "Paracetamol syrup 120 mg/5mL (50 mL or 100 mL)", "rif150": "Rifampicin 150 mg, isoniazid 75 mg, pyrazinamide 400 mg and ethambutol 275 mg tablets  (28, 56 or 84 tablets)", "rif60": "Rifampicin 60mg and isoniazid 60 mg dispersible tablet (28 or 56 tablets)", "sod": "Sodium chloride 0.9% 1L", "ten": "Tenofovir 300 mg, emtricitabine 200 mg, efavirenz 600 mg tablet, 28 tablets  (FDC)", "tet": "Tetanus toxoid vaccine (10 doses)", "val": "Valproate sodium 50ml or 200mg", "car": "Carbamazepine 200 mg tablets (28, 56 or 84 tablets)", "cef": "Cefixime 400 mg capsules (1 capsule)", "dta": "DTaP-IPV/Hib (Pentavalent) Vaccine (EPI)"}}
+{
+    "country_stats": {
+        "medicine_instock": {
+            "met": 99,
+            "amosus": 98,
+            "cex": 95,
+            "lam": 88,
+            "rif150": 95,
+            "adr": 99,
+            "car": 97,
+            "partab": 91,
+            "dta": 86,
+            "med": 99,
+            "cef": 68,
+            "iso": 99,
+            "amocap": 95,
+            "tet": 99,
+            "aba": 90,
+            "rif60": 94,
+            "sod": 96,
+            "ins": 98,
+            "ten": 98,
+            "bec": 98,
+            "parsyr": 98,
+            "hyd": 98
+        },
+        "monthly_availability": {
+            "2016-06": 94.8051948051948,
+            "2016-04": 94.73684210526315,
+            "2016-05": 94.88636363636364,
+            "2016-02": 96.81818181818181,
+            "2016-03": 95.15151515151516,
+            "2016-01": 95.45454545454545,
+            "2015-12": 100.0
+        },
+        "medicine_stockouts": {
+            "amosus": 1,
+            "cex": 4,
+            "cef": 31,
+            "rif150": 4,
+            "hyd": 1,
+            "car": 2,
+            "partab": 8,
+            "dta": 13,
+            "lam": 11,
+            "amocap": 4,
+            "aba": 9,
+            "rif60": 5,
+            "sod": 3,
+            "parsyr": 1,
+            "ten": 1,
+            "bec": 1,
+            "ins": 1
+        }
+    },
+    "provinces": [{
+        "code": "MP",
+        "name": "Mpumalanga",
+        "stats": {
+            "medicine_instock": {
+                "met": 17,
+                "amosus": 17,
+                "cex": 17,
+                "lam": 17,
+                "rif150": 17,
+                "adr": 17,
+                "car": 17,
+                "partab": 17,
+                "dta": 17,
+                "med": 17,
+                "cef": 17,
+                "iso": 17,
+                "amocap": 17,
+                "tet": 17,
+                "aba": 17,
+                "rif60": 17,
+                "sod": 17,
+                "ins": 17,
+                "ten": 17,
+                "bec": 17,
+                "parsyr": 17,
+                "hyd": 17
+            },
+            "monthly_availability": {
+                "2016-06": 100.0,
+                "2016-04": 100.0,
+                "2016-05": 100.0,
+                "2016-02": 100.0,
+                "2016-03": 100.0,
+                "2016-01": 100.0
+            },
+            "medicine_stockouts": {}
+        }
+    }, {
+        "code": "GT",
+        "name": "Gauteng",
+        "stats": {
+            "medicine_instock": {
+                "met": 16,
+                "amosus": 16,
+                "cex": 16,
+                "lam": 16,
+                "rif150": 15,
+                "adr": 16,
+                "car": 16,
+                "partab": 16,
+                "dta": 15,
+                "med": 16,
+                "cef": 8,
+                "iso": 16,
+                "amocap": 15,
+                "tet": 16,
+                "aba": 16,
+                "rif60": 15,
+                "sod": 15,
+                "ins": 16,
+                "ten": 16,
+                "bec": 16,
+                "parsyr": 15,
+                "hyd": 16
+            },
+            "monthly_availability": {
+                "2016-04": 96.5909090909091,
+                "2016-05": 93.18181818181817,
+                "2016-02": 98.86363636363636,
+                "2016-03": 93.18181818181817,
+                "2016-01": 95.45454545454545
+            },
+            "medicine_stockouts": {
+                "cef": 8,
+                "rif60": 1,
+                "sod": 1,
+                "amocap": 1,
+                "dta": 1,
+                "rif150": 1,
+                "parsyr": 1
+            }
+        }
+    }, {
+        "code": "NW",
+        "name": "North West",
+        "stats": {
+            "medicine_instock": {
+                "met": 12,
+                "amosus": 12,
+                "cex": 12,
+                "lam": 2,
+                "rif150": 11,
+                "adr": 12,
+                "car": 11,
+                "partab": 11,
+                "dta": 12,
+                "med": 12,
+                "cef": 3,
+                "iso": 12,
+                "amocap": 11,
+                "tet": 12,
+                "aba": 3,
+                "rif60": 11,
+                "sod": 12,
+                "ins": 12,
+                "ten": 12,
+                "bec": 12,
+                "parsyr": 12,
+                "hyd": 12
+            },
+            "monthly_availability": {
+                "2016-06": 81.81818181818183,
+                "2016-04": 88.63636363636364,
+                "2016-05": 84.0909090909091,
+                "2016-02": 90.9090909090909,
+                "2016-03": 88.63636363636364,
+                "2016-01": 90.9090909090909
+            },
+            "medicine_stockouts": {
+                "cef": 9,
+                "amocap": 1,
+                "aba": 9,
+                "lam": 10,
+                "rif60": 1,
+                "car": 1,
+                "partab": 1,
+                "rif150": 1
+            }
+        }
+    }, {
+        "code": "FS",
+        "name": "Free State",
+        "stats": {
+            "medicine_instock": {
+                "met": 10,
+                "amosus": 10,
+                "cex": 8,
+                "med": 10,
+                "rif150": 10,
+                "adr": 10,
+                "car": 9,
+                "partab": 4,
+                "dta": 7,
+                "lam": 10,
+                "cef": 8,
+                "iso": 10,
+                "amocap": 10,
+                "tet": 10,
+                "aba": 10,
+                "rif60": 10,
+                "sod": 10,
+                "ins": 9,
+                "ten": 9,
+                "bec": 10,
+                "parsyr": 10,
+                "hyd": 9
+            },
+            "monthly_availability": {
+                "2016-06": 88.63636363636364,
+                "2016-04": 86.36363636363636,
+                "2016-05": 95.45454545454545,
+                "2016-02": 95.45454545454545,
+                "2016-03": 95.45454545454545
+            },
+            "medicine_stockouts": {
+                "cex": 2,
+                "cef": 2,
+                "hyd": 1,
+                "ten": 1,
+                "car": 1,
+                "partab": 6,
+                "dta": 3,
+                "ins": 1
+            }
+        }
+    }, {
+        "code": "WC",
+        "name": "Western Cape",
+        "stats": {
+            "medicine_instock": {
+                "met": 4,
+                "amosus": 4,
+                "cex": 4,
+                "lam": 4,
+                "rif150": 4,
+                "adr": 4,
+                "car": 4,
+                "partab": 4,
+                "dta": 1,
+                "med": 4,
+                "iso": 4,
+                "amocap": 4,
+                "tet": 4,
+                "aba": 4,
+                "rif60": 4,
+                "sod": 3,
+                "ins": 4,
+                "ten": 4,
+                "bec": 3,
+                "parsyr": 4,
+                "hyd": 4
+            },
+            "monthly_availability": {
+                "2016-02": 90.9090909090909,
+                "2016-01": 88.63636363636364
+            },
+            "medicine_stockouts": {
+                "cef": 4,
+                "bec": 1,
+                "dta": 3,
+                "sod": 1
+            }
+        }
+    }, {
+        "code": "LIM",
+        "name": "Limpopo",
+        "stats": {
+            "medicine_instock": {
+                "met": 10,
+                "amosus": 10,
+                "cex": 10,
+                "lam": 9,
+                "rif150": 10,
+                "adr": 10,
+                "car": 10,
+                "partab": 10,
+                "dta": 9,
+                "med": 10,
+                "cef": 9,
+                "iso": 10,
+                "amocap": 10,
+                "tet": 10,
+                "aba": 10,
+                "rif60": 10,
+                "sod": 9,
+                "ins": 10,
+                "ten": 10,
+                "bec": 10,
+                "parsyr": 10,
+                "hyd": 10
+            },
+            "monthly_availability": {
+                "2016-06": 100.0,
+                "2016-04": 100.0,
+                "2016-05": 97.72727272727273,
+                "2016-02": 93.18181818181817,
+                "2016-03": 100.0
+            },
+            "medicine_stockouts": {
+                "cef": 1,
+                "lam": 1,
+                "dta": 1,
+                "sod": 1
+            }
+        }
+    }, {
+        "code": "NC",
+        "name": "Northern Cape",
+        "stats": {
+            "medicine_instock": {
+                "met": 8,
+                "amosus": 7,
+                "cex": 7,
+                "lam": 8,
+                "rif150": 6,
+                "adr": 8,
+                "car": 8,
+                "partab": 8,
+                "dta": 3,
+                "med": 8,
+                "cef": 1,
+                "iso": 8,
+                "amocap": 6,
+                "tet": 8,
+                "aba": 8,
+                "rif60": 5,
+                "sod": 8,
+                "ins": 8,
+                "ten": 8,
+                "bec": 8,
+                "parsyr": 8,
+                "hyd": 8
+            },
+            "monthly_availability": {
+                "2016-06": 93.18181818181817,
+                "2016-04": 81.81818181818183,
+                "2016-05": 88.63636363636364,
+                "2016-03": 88.63636363636364
+            },
+            "medicine_stockouts": {
+                "cef": 7,
+                "rif60": 3,
+                "amosus": 1,
+                "amocap": 2,
+                "dta": 5,
+                "rif150": 2,
+                "cex": 1
+            }
+        }
+    }, {
+        "code": "EC",
+        "name": "Eastern Cape",
+        "stats": {
+            "medicine_instock": {
+                "met": 22,
+                "amosus": 22,
+                "cex": 21,
+                "med": 22,
+                "rif150": 22,
+                "adr": 22,
+                "car": 22,
+                "partab": 21,
+                "dta": 22,
+                "lam": 22,
+                "cef": 22,
+                "iso": 22,
+                "amocap": 22,
+                "tet": 22,
+                "aba": 22,
+                "rif60": 22,
+                "sod": 22,
+                "ins": 22,
+                "ten": 22,
+                "bec": 22,
+                "parsyr": 22,
+                "hyd": 22
+            },
+            "monthly_availability": {
+                "2016-06": 100.0,
+                "2016-04": 100.0,
+                "2016-05": 100.0,
+                "2016-02": 100.0,
+                "2016-03": 98.48484848484848,
+                "2016-01": 97.72727272727273,
+                "2015-12": 100.0
+            },
+            "medicine_stockouts": {
+                "partab": 1,
+                "cex": 1
+            }
+        }
+    }],
+    "total_clinics": 27,
+    "medicines": {
+        "aba": "Abacavir 20 mg/mL solution (240 mL)",
+        "adr": "Adrenaline 1 mg/ml injection (1 mL ampoule)",
+        "amosus": "Amoxicillin 125 mg/5ml suspension (75 or 100 mL)",
+        "amocap": "Amoxicillin 250 mg or 500 mg capsules (15 capsules)",
+        "azi": "Azithromycin 500mg",
+        "bec": "Beclomethasone 50 mcg or 100 mcg inhaler (200 inhalations)",
+        "cex": "Ceftriaxone injection 250 mg or 500 mg (vial)",
+        "hex": "Hexavalent (Vaccine)",
+        "hyd": "Hydrochlorothiazide 12.5 or 25 mg tablets (28 tablets)",
+        "ins": "Insulin soluble 100IU/ml injection (10 mL vial)",
+        "iso": "Isoniazid 300 mg tablet (28 tablets)",
+        "lam": "Lamivudine 10 mg/mL solution (240 mL)",
+        "med": "Medroxyprogesterone injection 150 mg (1 mL vial)",
+        "met": "Metformin 500 mg or 850 mg tablets (56 or 84 tablets)",
+        "partab": "Paracetamol 500 mg tablets (10 or 20 tablets)",
+        "parsyr": "Paracetamol syrup 120 mg/5mL (50 mL or 100 mL)",
+        "rif150": "Rifampicin 150 mg, isoniazid 75 mg, pyrazinamide 400 mg and ethambutol 275 mg tablets  (28, 56 or 84 tablets)",
+        "rif60": "Rifampicin 60mg and isoniazid 60 mg dispersible tablet (28 or 56 tablets)",
+        "sod": "Sodium chloride 0.9% 1L",
+        "ten": "Tenofovir 300 mg, emtricitabine 200 mg, efavirenz 600 mg tablet, 28 tablets  (FDC)",
+        "tet": "Tetanus toxoid vaccine (10 doses)",
+        "val": "Valproate sodium 50ml or 200mg",
+        "car": "Carbamazepine 200 mg tablets (28, 56 or 84 tablets)",
+        "cef": "Cefixime 400 mg capsules (1 capsule)",
+        "dta": "DTaP-IPV/Hib (Pentavalent) Vaccine (EPI)"
+    }
+}

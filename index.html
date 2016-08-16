@@ -1,142 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-	<meta charset="utf-8">
+  <head>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Medicine Stockout</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/pym.js"></script>
-</head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-<body>
-
-<div class="row">
-<h3>Tracking SA's Stockouts</h3>
-<hr>
-		<p>
-			We use citizen journalists to visit clinics and check if a predefined list of medicines are in stock. These medicines are required to be available according to DoH directive.
-		</p>
-</div>
-
-<div class="row clinic-check">
-
-<div class="col-xs-12 col-sm-4">
-<h3 class="cl-mon"><span class="glyphicon glyphicon-list-alt" aria-hidden-"true"></span> CLINICS MONITORED</h3>
-</div>
-
-<div class="col-xs-6 col-sm-4">
-<h3 class="cl-mon">48 <small>since 2014</small></h3>
-</div>
-
-<div class="col-xs-6 col-sm-4">
-<h3 class="cl-mon">20 <small>in 2016</small></h3>
-</div>
-
-</div>
-<div class="row province-btns">
-<div class="col-xs-12 col-sm-12 text-center">
-
- <div class="btn-group">
-  <a onclick="provinceClinicsTotal('7'); provinceClinics2016('5'); changeImage('img/ec.png'); provinceName('Eastern Cape')" type="button" class="btn btn-default prv-btn active">Eastern Cape</a>
-  <a onclick="provinceClinicsTotal('3'); provinceClinics2016('2'); changeImage('img/fs.png'); provinceName('Free State')" type="button" class="btn btn-default prv-btn">Free State</a>
-  <a onclick="provinceClinicsTotal('10'); provinceClinics2016('4'); changeImage('img/gau.png'); provinceName('Gauteng')" type="button" class="btn btn-default prv-btn">Gauteng</a>
-  <a onclick="provinceClinicsTotal('3'); provinceClinics2016('0'); changeImage('img/kzn.png'); provinceName('KwaZulu-Natal')" type="button" class="btn btn-default prv-btn">KwaZulu-Natal</a>
-  <a onclick="provinceClinicsTotal('4'); provinceClinics2016('2'); changeImage('img/lim.png'); provinceName('Limpopo')" type="button" class="btn btn-default prv-btn">Limpopo</a>
-  <a onclick="provinceClinicsTotal('5'); provinceClinics2016('4'); changeImage('img/mpu.png'); provinceName('Mpumalanga')" type="button" class="btn btn-default prv-btn">Mpumalanga</a>
-  <a onclick="provinceClinicsTotal('7'); provinceClinics2016('2'); changeImage('img/nw.png'); provinceName('North West')" type="button" class="btn btn-default prv-btn">North West</a>
-  <a onclick="provinceClinicsTotal('5'); provinceClinics2016('2'); changeImage('img/nc.png'); provinceName('Northern Cape')" type="button" class="btn btn-default prv-btn">Northern Cape</a>
-  <a onclick="provinceClinicsTotal('4'); provinceClinics2016('2'); changeImage('img/wc.png'); provinceName('Western Cape')" type="button" class="btn btn-default prv-btn">Western Cape</a>
-</div>
-
-</div>
-
-</div>
-
-<div class="row province-btns">
-
-<div class="col-xs-12 col-sm-8 col-sm-offset-1 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4 province-data">
-<h3 id="prv-name">Eastern Cape</h3>
-<h3 id="prv-cli-total">7 <small>since 2014</small></h3>
-<h3 id="prv-cli-three">5 <small>in 2016</small></h3>
-<img id="prv-image" src="img/ec.png">
-</div>
-
-</div>
-
-
-
-<div class="row">
-
-</div>
-
-<div class="row">
-<h3>MOST COMMON STOCKOUTS 2016</h3>
-</div>
-
-<div class="row">
-
-<div class="col-xs-12 col-sm-6" style="padding-left: 0; padding-right: 0">
-  <table class="table">
-    <thead><tr><th>CONSISTENTLY IN STOCK</th></tr></thead>
-    <tbody>
-      <tr><td>Adrenaline 1 mg/ml injection <span class="dosage">(1 mL ampoule)</span></td></tr>
-      <tr><td>Amoxicillin 125 mg/5ml suspension <span class="dosage">(75 or 100 mL)</span></td></tr>
-      <tr><td>Hydrochlorothiazide 12.5 or 25 mg tablets <span class="dosage">(28 tablets)</span></td></tr>
-      <tr><td>Insulin soluble 100IU/ml injection <span class="dosage">(10 mL vial)</span></td></tr>
-      <tr><td>Isoniazid 300 mg tablet <span class="dosage">(28 tablets)</span></td></tr>
-      <tr><td>Medroxyprogesterone injection 150 mg <span class="dosage">(1 mL vial)</span></td></tr>
-      <tr><td>Metformin 500 mg or 850 mg tablets <span class="dosage">(56 or 84 tablets)</span></td></tr>
-      <tr><td>Tetanus toxoid vaccine <span class="dosage">(10 doses)</span></td></tr>      
-    </tbody>
-  </table>
-</div>
-
-<div class="col-xs-12 col-sm-6" style="padding-left: 0; padding-right: 0">
-	  <table class="table">
-    <thead><tr><th>WORST OUT OF STOCK</th></tr></thead>	  
-    <tbody>
-      <tr><td>Paracetamol 500 mg tablets <span class="dosage">(10 or 20 tablets)</span></td></tr>
-      <tr><td>Abacavir 20 mg/mL solution <span class="dosage">(240 mL)</span></td></tr>
-      <tr><td>Lamivudine 10 mg/mL solution <span class="dosage">(240 mL)</span></td></tr>
-      <tr><td>DTaP-IPV/Hib (Pentavalent) Vaccine <span class="dosage">(EPI)</span></td></tr>
-      <tr><td>Cefixime 400 mg capsules <span class="dosage">(1 capsule)</span></td></tr>
-    </tbody>
-  </table>
-</div>
-
-</div>
-
-<div class="row">
-  <h3 class="chart-title">MEDICINES IN STOCK NATIONWIDE 2016</h3>
-  <div id="curve_chart" style="width: 100%; height: 300px"></div>
-</div>
-<br>
-<div class="row">
-<a href="https://docs.google.com/spreadsheets/d/18tgq_5hsyKPq5WqczwYdVpYWqV2ih88htq69wNlWClA/export?format=csv" class="btn btn-default download"><span class="glyphicon glyphicon-save" aria-hidden-"true"></span> Download July 2014 - July 2015 data</a>
-<a href="https://docs.google.com/spreadsheets/d/1ZZrb4urV7GmPUd6VFHoqNKplpMcY4TzkMz5PeXU3TX0/export?format=csv" class="btn btn-default download"><span class="glyphicon glyphicon-save" aria-hidden-"true"></span> Download December 2015 - May 2016 data</a>
-</div>
-
-<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<!-- change for testing json --> <script src="js/control.js"></script> <!-- ### -->
-  <script src="https://www.gstatic.com/charts/loader.js"></script>
-    <script>
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-    </script>
-    <script type="text/javascript">
-    var pymChild = new pym.Child({id: 'code4sa-embed-stockout' });
-    </script>
-
-
-
-
-
-</body>
-
+    <!--[if lt IE 9]>
+    <script src = "http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <header class="row">
+        <h3>Tracking SA's Stockouts</h3>
+        <p>We use citizen journalists to checking if a predefined list of medicines are in stock at particular clinics. These medicines are required to be available according to DoH directive.</p>
+      </header>
+      <section class="row national-clinics">
+        <div class="col-xs-12 col-sm-4">
+          <h3 class="cl-mon"><span class="glyphicon glyphicon-list-alt" aria-hidden-"true"></span> CLINICS MONITORED</h3>
+        </div>
+        <div class="row">
+          <div class="row">
+            <h3 class="col-xs-12">Nationally</h3>
+          </div>
+          <div class="row">
+            <div class="col-xs-6 col-sm-4">
+              <h3 class="cl-mon">48 <small>since 2014</small></h3>
+            </div>
+            <div class="col-xs-6 col-sm-4">
+              <h3 class="cl-mon"><span id="clinics-total"></span> <small>in 2016</small></h3>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="row prv-btns text-center">
+        <div class="btn-group">
+          <button type="button" class="btn btn-default prv-btn active" data-code="EC">Eastern Cape</button>
+          <button type="button" class="btn btn-default prv-btn" data-code="FS">Free State</button>
+          <button type="button" class="btn btn-default prv-btn" data-code="GT">Gauteng</button>
+          <button type="button" class="btn btn-default prv-btn" data-code="KZN">KwaZulu-Natal</button>
+          <button type="button" class="btn btn-default prv-btn" data-code="LIM">Limpopo</button>
+          <button type="button" class="btn btn-default prv-btn" data-code="MP">Mpumalanga</button>
+          <button type="button" class="btn btn-default prv-btn" data-code="NW">North West</button>
+          <button type="button" class="btn btn-default prv-btn" data-code="NC">Northern Cape</button>
+          <button type="button" class="btn btn-default prv-btn" data-code="WC">Western Cape</button>
+        </div>
+      </section>
+      <section class="row prv-clinics">
+        <div class="row">
+          <h3 class="col-xs-12" id="prv-name"></h3>
+        </div>
+        <div class="row">
+          <div class="col-xs-6 col-sm-4">
+            <h3 class="cl-mon">48 <small>since 2014</small></h3>
+          </div>
+          <div class="col-xs-4 col-sm-4">
+            <h3 class="cl-mon"><span id="prv-clinics"></span> <small>in 2016</small></h3>
+          </div>
+          <div class="col-xs-4 col-sm-4">
+            <img src="" id="prv-image"  />
+          </div>
+        </div>
+      </section>
+      <section class="row prv-in-stock" id="prv-in-stock">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>In Stock</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+      <section class="row prv-stockouts" id="prv-stockouts">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Out of Stock</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </div>
+  <!-- scripts -->
+  <script src="js/pym.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>
+  <script src="js/app.js"></script>
+  <!-- end scripts -->
+  </body>
 </html>

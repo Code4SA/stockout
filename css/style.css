@@ -22,7 +22,7 @@ a {
 
 .dosage {
 	font-family: 'Ubuntu Mono', 'Droid Sans', sans-serif;
-	font-size: 12px; 
+	font-size: 12px;
 }
 
 .clinic-check {
@@ -37,10 +37,6 @@ a {
 
 .cl-mon {
 	margin-bottom: 20px;
-}
-
-.cl-mon small {
-	color: #FFF;
 }
 
 .btn {
@@ -61,7 +57,7 @@ a {
 
 .prv-btn:hover, .prv-btn.active:hover, .prv-btn.active, .prv-btn:focus {
 	background-color: #EC7F24;
-	color: #FFF;	
+	color: #FFF;
 	box-shadow: none;
 }
 
@@ -105,7 +101,7 @@ a {
 @media (min-width: 768px) {
 	.chart-title {
 		margin-bottom: 0
-	}	
+	}
 }
 
 @media (max-width: 768px) {
@@ -119,4 +115,3 @@ a {
 	z-index: -1;
 	}
 }
-
