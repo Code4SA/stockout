@@ -1,0 +1,23 @@
+{
+  "name": "stockout_reports",
+  "version": "1.0.0",
+  "description": "reports app for health e-news citizen reporting medicine stockouts programme",
+  "main": "js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/code4sa/stockout.git"
+  },
+  "author": "code4sa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/code4sa/stockout/issues"
+  },
+  "homepage": "https://github.com/code4sa/stockout#readme",
+  "devDependencies": {
+    "browser-sync": "^2.14.0",
+    "gulp": "^3.9.1"
+  }
+}

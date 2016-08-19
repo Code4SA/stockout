@@ -11,13 +11,20 @@ html {
     margin: auto;
 }
 
-body {
-    display: table-cell;
-    vertical-align: middle;
+a {
+	color: rgb(236, 127, 37);
 }
 
-a {
-	color: #EC7F24;
+ul {
+	list-style: none;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+	vertical-align: middle;
+}
+
+.table>thead>tr>th {
+	border-bottom:none;
 }
 
 .dosage {
@@ -25,9 +32,22 @@ a {
 	font-size: 12px;
 }
 
-.clinic-check {
-	background-color: #EC7F24;
-	color: #FFF;
+.national-clinics {
+	background-color: rgb(236, 127, 37);
+	color: rgb(255,255,255);
+	padding:20px !important;
+}
+
+.national-clinics .glyphicon {
+	line-height:0.8;
+}
+
+.national-clinics small {
+	color:rgb(255,255,255);
+}
+
+.national-clinics h3 {
+	margin:0;
 }
 
 .row {
@@ -35,7 +55,7 @@ a {
 	margin: 0;
 }
 
-.cl-mon {
+.cl-monx {
 	margin-bottom: 20px;
 }
 
@@ -49,16 +69,19 @@ a {
 }
 
 .prv-btn {
-	background-color: #f0f0f0;
 	border: none;
-	margin-bottom: 5px;
 	border-radius: 0;
 }
 
-.prv-btn:hover, .prv-btn.active:hover, .prv-btn.active, .prv-btn:focus {
-	background-color: #EC7F24;
-	color: #FFF;
+.prv-btn:hover, .prv-btn.active:hover, .prv-btn:focus, .prv-btn:active, .prv-btn.active, .prv-btn:focus {
+	background-color: rgb(236, 127, 37);
+	color: rgb(255,255,255);
 	box-shadow: none;
+	font-style: italic;
+}
+
+.prv-btn:focus {
+	outline:none;
 }
 
 .btn-group-vertical > .btn, .btn-group > .btn {
@@ -67,7 +90,7 @@ a {
 
 .province-data h3 {
 	font-size: 2.7em;
-	color: #EC7F24;
+	color: rgb(236, 127, 37);
 }
 
 .province-data small {
@@ -83,19 +106,124 @@ a {
 
 .download {
 	border: none;
-	color: #FFF;
-	background-color: #EC7F24;
+	color: rgb(255,255,255);
+	background-color: rgb(236, 127, 37);
 	margin-bottom: 10px;
 }
 
 .download.active:hover, .download:hover, .download.active, .download:focus {
-	background-color: #555;
-	color: #FFF;
+	background-color: rgb(5,5,5);
+	color: rgb(255,255,255);
 	box-shadow: none;
 }
 
 #curve_chart text {
 	font-weight: 300 !important;
+}
+
+/* Province buttons */
+.prv-btns {
+	padding:20px 0;
+}
+
+/* Table */
+.prv-stock-table .table .critical {
+	color:rgb(230, 17, 17);
+}
+.prv-stock-table .table .intermediate {
+	color:rgb(235, 176, 25);
+}
+.prv-stock-table .table .avail h3 {
+	margin:10px 0;
+}
+.prv-stock-table .table .total h4 {
+	display:inline-block;
+	margin:0;
+}
+
+.prv-dialogue {
+	margin:50px 0;
+}
+
+.header .dropdown-toggle {
+	border-color:rgb(3,3,3);
+}
+
+.header .dropdown-menu {
+	left:auto;
+}
+
+
+
+/* Counter */
+.counter .clinics-total {
+	font-size:25px;
+	fill:rgb(236, 127, 37);
+}
+
+.counter .middle {
+	stroke: rgb(3,3,3);
+}
+
+.counter .outer {
+	stroke-width: 0.1em;
+}
+
+.counter .middle {
+	stroke-width: .5em;
+}
+
+/* Clinics */
+.prv-clinics .prv-image {
+	width: 100%;
+	max-width:250px;
+	margin-left:25px;
+}
+
+.prv-clinics .prv-name {
+	text-transform: uppercase;
+	display:inline-block;
+	margin-bottom:0;
+}
+
+.prv-clinics .hospital {
+	height:30px;
+	display:inline;
+	vertical-align:bottom;
+	margin:0 0 3px 10px;
+}
+
+.prv-clinics .prv-title {
+	white-space:nowrap;
+}
+
+.prv-clinics .prv-clinics-num {
+	margin:0;
+	display:inline-block;
+}
+
+.prv-clinics .clinics-copy {
+	margin-bottom:10px;
+}
+
+.prv-clinics .copy-text {
+	display: inline;
+	font-size:18px;
+}
+
+.prv-clinics .avail-num {
+	color:rgb(236, 127, 37);
+	display:inline-block;
+	margin-right:10px;
+}
+
+.prv-clinics .total-avail {
+	margin-bottom:20px;
+}
+
+/* Reports */
+.reports {
+	padding:20px;
 }
 
 @media (min-width: 768px) {
@@ -109,9 +237,9 @@ a {
 		padding: 0;
 	}
 	.province-data img {
-	position: absolute;
-	bottom: 0;
-	right: 15%;
-	z-index: -1;
+		position: absolute;
+		bottom: 0;
+		right: 15%;
+		z-index: -1;
 	}
 }

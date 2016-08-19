@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Medicine Stockout</title>
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <!--[if lt IE 9]>
     <script src = "http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -15,72 +15,60 @@
   </head>
   <body>
     <div class="container">
-      <header class="row">
-        <h3>Tracking SA's Stockouts</h3>
-        <p>We use citizen journalists to checking if a predefined list of medicines are in stock at particular clinics. These medicines are required to be available according to DoH directive.</p>
+      <header class="header">
+        <div class="row">
+          <div class="col-xs-7 col-lg-9 col-md-8 col-sm-8">
+            <h3>Tracking SA's Stockouts</h3>
+            <p>Since 2014, we've worked with a network of citizen journalists to monitor if certain medicines are in stock at 48 clinics around the country. The medicines we chose followed the Department of Health's own directives, which stipulate mandatory minimum drug availability at recognized healthcare centers.</p>
+          </div>
+          <div class="col-xs-5 col-lg-3 col-md-4 col-sm-4 text-center">
+            <svg height="200" width="200" class="counter">
+              <circle r="70" cx="50%" cy="50%" fill="transparent" stroke="black" stroke-dasharray="502.65" stroke-dashoffset="100" class="middle" shape-rendering="optimizeQuality" transform="rotate(270,100,100)" id="counter"></circle>
+              <circle r="64" cx="50%" cy="50%" fill="transparent" class="inner"></circle>
+              <text x="50%" y="42%" text-anchor="middle" dominant-baseline="middle" id="clinics-total" class="clinics-total"></text>
+              <text x="50%" y="58%" text-anchor="middle" dominant-baseline="middle">clinics in 2016</text>
+            </svg>
+            <div class="dropdown text-center" type="button">
+              <button class="btn btn-default dropdown-toggle" id="report-dropdown">
+                <span class="glyphicon glyphicon-save" aria-hidden-"true"></span> Monthly Reports
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a type="button" href="https://docs.google.com/spreadsheets/d/18tgq_5hsyKPq5WqczwYdVpYWqV2ih88htq69wNlWClA/export?format=csv">July 2014 - July 2015</a>
+                </li>
+                <li>
+                  <a type="button" href="https://docs.google.com/spreadsheets/d/1ZZrb4urV7GmPUd6VFHoqNKplpMcY4TzkMz5PeXU3TX0/export?format=csv">December 2015 - May 2016</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </header>
-      <section class="row national-clinics">
-        <div class="col-xs-12 col-sm-4">
-          <h3 class="cl-mon"><span class="glyphicon glyphicon-list-alt" aria-hidden-"true"></span> CLINICS MONITORED</h3>
-        </div>
+      <section class="row prv-dialogue">
         <div class="row">
-          <div class="row">
-            <h3 class="col-xs-12">Nationally</h3>
-          </div>
-          <div class="row">
-            <div class="col-xs-6 col-sm-4">
-              <h3 class="cl-mon">48 <small>since 2014</small></h3>
+          <ul class="prv-btns col-xs-5 col-sm-6 col-m-7 col-lg-8 pull-left" id="prv-btns"></ul>
+          <div class="prv-clinics col-xs-7 col-sm-6 col-m-5 col-lg-4 pull-right">
+            <div class="prv-title">
+              <h2 class="prv-name" id="prv-name"></h2>
+              <img class="hospital" src="img/hospital.svg" />
+              <h2 class="copy-num prv-clinics-num" id="prv-clinics"></h2>
             </div>
-            <div class="col-xs-6 col-sm-4">
-              <h3 class="cl-mon"><span id="clinics-total"></span> <small>in 2016</small></h3>
+            <div class="total-avail">
+              <h2 class="avail-num" id="prv-avail"></h2>
+              <span class="copy-text"><small>availability in </small></span>
+              <span class="copy-text" id="avail-date"></span>
             </div>
+            <img src="" id="prv-image" class="prv-image pull-right"  />
           </div>
         </div>
       </section>
-      <section class="row prv-btns text-center">
-        <div class="btn-group">
-          <button type="button" class="btn btn-default prv-btn active" data-code="EC">Eastern Cape</button>
-          <button type="button" class="btn btn-default prv-btn" data-code="FS">Free State</button>
-          <button type="button" class="btn btn-default prv-btn" data-code="GT">Gauteng</button>
-          <button type="button" class="btn btn-default prv-btn" data-code="KZN">KwaZulu-Natal</button>
-          <button type="button" class="btn btn-default prv-btn" data-code="LIM">Limpopo</button>
-          <button type="button" class="btn btn-default prv-btn" data-code="MP">Mpumalanga</button>
-          <button type="button" class="btn btn-default prv-btn" data-code="NW">North West</button>
-          <button type="button" class="btn btn-default prv-btn" data-code="NC">Northern Cape</button>
-          <button type="button" class="btn btn-default prv-btn" data-code="WC">Western Cape</button>
-        </div>
-      </section>
-      <section class="row prv-clinics">
-        <div class="row">
-          <h3 class="col-xs-12" id="prv-name"></h3>
-        </div>
-        <div class="row">
-          <div class="col-xs-6 col-sm-4">
-            <h3 class="cl-mon">48 <small>since 2014</small></h3>
-          </div>
-          <div class="col-xs-4 col-sm-4">
-            <h3 class="cl-mon"><span id="prv-clinics"></span> <small>in 2016</small></h3>
-          </div>
-          <div class="col-xs-4 col-sm-4">
-            <img src="" id="prv-image"  />
-          </div>
-        </div>
-      </section>
-      <section class="row prv-in-stock" id="prv-in-stock">
+      <section class="row prv-stock-table" id="prv-stock-table">
         <table class="table">
           <thead>
             <tr>
-              <th>In Stock</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </section>
-      <section class="row prv-stockouts" id="prv-stockouts">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Out of Stock</th>
+              <th>Medicine</th>
+              <th class="text-center">Availability</th>
+              <th class="text-center">Clinic Visits</th>
             </tr>
           </thead>
           <tbody></tbody>
@@ -88,6 +76,7 @@
       </section>
     </div>
   <!-- scripts -->
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="js/pym.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>
   <script src="js/app.js"></script>
