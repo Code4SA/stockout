@@ -32,35 +32,24 @@ ul {
 	font-size: 12px;
 }
 
-.national-clinics {
-	background-color: rgb(236, 127, 37);
-	color: rgb(255,255,255);
-	padding:20px !important;
+.header {
+	padding-top:20px;
 }
 
-.national-clinics .glyphicon {
-	line-height:0.8;
+.header p {
+	margin:20px 0;
 }
 
-.national-clinics small {
-	color:rgb(255,255,255);
+.header .row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
 }
-
-.national-clinics h3 {
-	margin:0;
-}
-
-.row {
-	padding: 0px 10px 0 10px;
-	margin: 0;
-}
-
-.cl-monx {
-	margin-bottom: 20px;
-}
-
-.btn {
-	padding: 5px 7px 5px 7px;
+.header .row > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
 }
 
 .province-btns {
@@ -71,6 +60,7 @@ ul {
 .prv-btn {
 	border: none;
 	border-radius: 0;
+	background:none;
 }
 
 .prv-btn:hover, .prv-btn.active:hover, .prv-btn:focus, .prv-btn:active, .prv-btn.active, .prv-btn:focus {
@@ -121,41 +111,55 @@ ul {
 	font-weight: 300 !important;
 }
 
-/* Province buttons */
-.prv-btns {
-	padding:20px 0;
+.dropdown {
+	display:inline-block;
 }
 
 /* Table */
-.prv-stock-table .table .critical {
+.prv-stock-table .table-header {
+	background-color:rgb(236, 127, 37);
+	color:rgb(255,255,255);
+	padding:1rem 0;
+}
+
+.prv-stock-table .table-header h5 {
+	margin:0;
+}
+
+.prv-stock-table .panel .panel-collapse {
+	border-top:1px solid #ddd;
+	padding:0.6rem 0;
+	font-weight:bold;
+}
+
+.prv-stock-table .med-row {
+	border-top:1px solid #ddd;
+	padding-top:.6rem;
+}
+
+.prv-stock-table .med-info {
+	padding-bottom:.5rem;
+}
+
+.prv-stock-table .med-info:hover {
+	cursor:pointer;
+}
+
+.prv-stock-table .row .critical {
 	color:rgb(230, 17, 17);
 }
-.prv-stock-table .table .intermediate {
+.prv-stock-table .row .intermediate {
 	color:rgb(235, 176, 25);
-}
-.prv-stock-table .table .avail h3 {
-	margin:10px 0;
-}
-.prv-stock-table .table .total h4 {
-	display:inline-block;
-	margin:0;
 }
 
 .prv-dialogue {
 	margin:50px 0;
 }
 
-.header .dropdown-toggle {
-	border-color:rgb(3,3,3);
-}
-
-.header .dropdown-menu {
-	left:auto;
-}
-
-
-
 /* Counter */
+.counter {
+	margin:auto;
+}
 .counter .clinics-total {
 	font-size:25px;
 	fill:rgb(236, 127, 37);
@@ -195,6 +199,7 @@ ul {
 
 .prv-clinics .prv-title {
 	white-space:nowrap;
+	margin-bottom:20px;
 }
 
 .prv-clinics .prv-clinics-num {
@@ -206,19 +211,27 @@ ul {
 	margin-bottom:10px;
 }
 
-.prv-clinics .copy-text {
-	display: inline;
-	font-size:18px;
+.prv-clinics span {
+	display: table-cell;
+	vertical-align:middle;
+}
+
+.prv-clinics .prv-text {
+	padding-left:15px;
+}
+
+.prv-clinics .prv-date {
+	padding-left:5px;
 }
 
 .prv-clinics .avail-num {
 	color:rgb(236, 127, 37);
-	display:inline-block;
-	margin-right:10px;
+	display:table-cell;
 }
 
 .prv-clinics .total-avail {
 	margin-bottom:20px;
+	display:table;
 }
 
 /* Reports */
