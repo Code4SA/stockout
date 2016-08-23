@@ -217,7 +217,7 @@
     var $row = $('<div class="' + row.status + '"></div>');
     var $info = $('<div class="med-info" id="' + code + '-heading"></div>');
     var $toggle = $('<div class="med-row row" aria-controls="info-' + code + '" data-toggle="collapse" data-parent="#stock-table" aria-expanded="false" data-target="#info-' + code + '"></div>');
-    var $box = $('<div id="info-' + code + '" class="panel-collapse collapse" role="tabpanel" aria-labelledby="' + code + '-heading">' + constants.MEDICINES[code] + '</div>');
+    var $box = $('<div id="info-' + code + '" class="panel-collapse collapse" role="tabpanel" aria-labelledby="' + code + '-heading"><div class="inner">' + constants.MEDICINES[code] + '</div></div>');
     var $medName = $('<div class="med-name col-xs-7">' + name + '</div>');
     var $medDosage = $('<span class="med-dosage">' + dosage + '</span>');
     var $medAvail = $('<div class="med-avail text-xs-center col-xs-3"><strong>' + row.avail + '%</strong></div>');
