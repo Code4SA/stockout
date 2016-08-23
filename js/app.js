@@ -290,8 +290,13 @@
             case 'set':
               domTarget.html(domChange);
               break;
-            case 'list':
+            case 'append':
               domTarget.append(domChange);
+              break;
+            case 'list':
+              domTarget
+                .empty()
+                .append(domChange);
               break;
             case 'img':
               domTarget.attr('src','img/' + domChange);

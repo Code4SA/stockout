@@ -145,10 +145,10 @@ ul {
 	cursor:pointer;
 }
 
-.prv-stock-table .row .critical {
+.prv-stock-table .critical .row {
 	color:rgb(230, 17, 17);
 }
-.prv-stock-table .row .intermediate {
+.prv-stock-table .intermediate .row {
 	color:rgb(235, 176, 25);
 }
 
