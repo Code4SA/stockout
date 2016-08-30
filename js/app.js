@@ -1,7 +1,7 @@
 (function(window) {
   var stockoutData = null;
   var constants = window.constants;
-  var pymChild = window.pymChild || new pym.Child({id: 'code4sa-embed-stockout' });
+  window.pymChild = window.pymChild || new pym.Child({id: 'code4sa-embed-stockout' });
 
   // Cache the DOM for each province so that we don't have to
   // remake it all every time a province is selected
@@ -30,14 +30,7 @@
           return res.json()
           .then(function(data) {
             // Set data
-            stockoutData = data;
-
-            // Sort provinces by name
-            stockoutData.provinces.sort(function(a,b) {
-              return a.name > b.name;
-            });
-
-            setupButtons(stockoutData.provinces);
+            init(data);
           });
         }
       });
@@ -50,7 +43,24 @@
     }
   }
 
-  function setupButtons(provinces) {
+  function init(data) {
+    stockoutData = data;
+
+    // Sort provinces by name
+    stockoutData.provinces.sort(function(a,b) {
+      return a.name > b.name;
+    });
+
+    // Setup menu links
+    setupLinks();
+    // Attach click handlers and display province data as callback
+    buttonClickHandlers();
+    // Show default view
+    displayStockData('ZA');
+  }
+
+  function setupLinks() {
+    var provinces = stockoutData.provinces;
     var $links = [];
     var dom = [];
     // Create a list of indexes that point us to where each ID is
@@ -79,9 +89,6 @@
     dom.push({ target: 'prvLinks', change: $links, type: 'list' });
 
     view(dom);
-
-    // Attach click handlers and display province data as callback
-    buttonClickHandlers(displayStockData.bind(null,'ZA'));
   }
 
   function createLink(name,code,active) {
@@ -90,6 +97,31 @@
     if(active) $link.addClass('active');
 
     return $link;
+  }
+
+  function buttonClickHandlers(cb) {
+    // Event listener should only be attached once we've
+    // gotten the data we need
+    var $btns = $.merge(DOM.$prvBtns,DOM.$prvLinks);
+
+    $btns.on('click', function(e) {
+      var $target = $(e.target);
+      var code = $target.attr('data-code');
+
+      // Toggle active button classes
+      $('.nav-item').removeClass('active');
+      $('.nav-item[data-code="' + code + '"]').addClass('active');
+      // Show province data
+      if(code) {
+        displayStockData(code);
+      } else {
+        console.log('Province data does not exist for province with code ' + code);
+      }
+    });
+
+    if(cb) {
+      cb();
+    }
   }
 
   function tableClickHandlers() {
@@ -127,31 +159,6 @@
         $stockTable.removeAttr('data-open');
       }
     });
-  }
-
-  function buttonClickHandlers(cb) {
-    // Event listener should only be attached once we've
-    // gotten the data we need
-    var $btns = $.merge(DOM.$prvBtns,DOM.$prvLinks);
-
-    $btns.on('click', function(e) {
-      var $target = $(e.target);
-      var code = $target.attr('data-code');
-
-      // Toggle active button classes
-      $('.nav-item').removeClass('active');
-      $('.nav-item[data-code="' + code + '"]').addClass('active');
-      // Show province data
-      if(code) {
-        displayStockData(code);
-      } else {
-        console.log('Province data does not exist for province with code ' + code);
-      }
-    });
-
-    if(cb) {
-      cb();
-    }
   }
 
   // Generate a row in the medicines table
@@ -232,7 +239,7 @@
     return className;
   }
 
-  function view(dom) {
+  function view(dom,shouldResize) {
     if(!!dom) {
       if(isArray(dom)) {
         dom.forEach(function(el) {
@@ -261,7 +268,9 @@
         view([dom]);
       }
 
-      pymChild.sendHeight(); // Make sure pym resizes
+      if(shouldResize) {
+        pymChild.sendHeight(); // Make sure pym resizes
+      }
     } else {
       console.log('No keys supplied to view, so DOM remains unchanged.');
     }
@@ -320,7 +329,7 @@
       dom.push({ target: 'availDate', change: dateFormat });
 
       // Set the view
-      view(dom);
+      view(dom,true);
 
       // COLOR INDICATOR
       DOM.$prvAvail.addClass(colorClass(availability));
