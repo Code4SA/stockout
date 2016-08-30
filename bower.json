@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "fetch": "^1.0.0",
-    "pym.js": "^0.4.5"
+    "pym.js": "^0.4.5",
+    "font-awesome": "^4.6.3"
   }
 }

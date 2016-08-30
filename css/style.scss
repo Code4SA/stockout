@@ -1,0 +1,356 @@
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono);
+
+$critical: rgb(230, 17, 17);
+$critical-light: rgb(231, 142, 142);
+$intermediate: rgb(235, 176, 25);
+$intermediate-light: rgb(237, 214, 154);
+$orange: rgb(236, 127, 37);
+
+html, body {
+  font-family: 'Droid Sans', sans-serif;
+  height: 100%;
+  width:100%;
+}
+
+ul {
+  list-style: none;
+}
+
+.table > {
+  tbody > tr > {
+    td, th {
+      vertical-align: middle;
+    }
+  }
+  tfoot > tr > {
+    td, th {
+      vertical-align: middle;
+    }
+  }
+  thead > tr > {
+    td {
+      vertical-align: middle;
+    }
+    th {
+      vertical-align: middle;
+      border-bottom: none;
+    }
+  }
+}
+
+.dosage {
+  font-family: 'Ubuntu Mono', 'Droid Sans', sans-serif;
+  font-size: 12px;
+}
+
+.header {
+  padding-top: 20px;
+  p {
+    margin: 20px 0;
+  }
+
+  .mobile-info {
+    display:none;
+    width:100%;
+  }
+}
+
+.mobile-nav {
+  .prv-dropdown, .report-dropdown, .mobile-info {
+    width:100%;
+
+    .dropdown-toggle, .dropdown-menu, .btn {
+      width:100%;
+    }
+  }
+  .prv-dropdown {
+    display:none;
+  }
+}
+
+.nav-item {
+  cursor:pointer;
+
+  &.active {
+    background-color:$orange;
+
+    &:hover {
+      background-color:$orange;
+    }
+  }
+}
+
+.prv-nav {
+  margin:25px 0;
+
+	.prv-btns {
+    margin:0 auto;
+
+    .row {
+      margin:0;
+    }
+
+    .prv-btn {
+      border-top:1px solid #ccc;
+      border-left:1px solid #ccc;
+      padding:0;
+
+      &.right {
+        border-right:1px solid #ccc;
+      }
+      &.bottom {
+        border-bottom:1px solid #ccc;
+      }
+
+      .btn {
+        border:none;
+        display:block;
+        border-radius:0;
+        width:100%;
+      }
+    }
+	}
+}
+
+button {
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn-group-vertical > .btn, .btn-group > .btn {
+  float: none;
+}
+
+.download {
+  border: none;
+  color: rgb(255, 255, 255);
+  background-color: $orange;
+  margin-bottom: 10px;
+  &.active:hover, &:hover, &.active, &:focus {
+    background-color: rgb(5, 5, 5);
+    color: rgb(255, 255, 255);
+    box-shadow: none;
+  }
+}
+
+.dropdown {
+  display: inline-block;
+}
+
+/* Table */
+
+.prv-stock-table {
+  padding:0 15px;
+
+  .table-header {
+    h5 {
+      margin: 0;
+    }
+    [class*='col-'] {
+      color: rgb(255, 255, 255);
+      padding-top: 1rem;
+      padding-bottom:1rem;
+      background-color: $orange;
+    }
+
+  }
+  .panel-collapse .inner {
+    border-top: 1px solid #ddd;
+    padding: 0.6rem 0;
+    font-style:italic;
+  }
+  .med-row {
+    padding-bottom: .5rem;
+
+    .plus {
+      padding-right:10px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.normal {
+      .med-info {
+        &:hover {
+          color:#ddd;
+        }
+      }
+    }
+		&.intermediate {
+      .med-info {
+        color: $intermediate;
+      }
+
+      .med-info {
+        &:hover {
+          color: $intermediate-light;
+        }
+      }
+		}
+		&.critical {
+			.med-info {
+				color: $critical;
+			}
+			&:hover {
+				.med-name {
+					color: $critical-light;
+				}
+			}
+		}
+  }
+  .row-toggle {
+		border-top: 1px solid #ddd;
+		padding-top: .6rem;
+  }
+}
+
+/* Clinics */
+
+.prv-info {
+	margin:40px 0 20px;
+
+	.prv-clinics {
+		.prv-name {
+			text-transform: uppercase;
+			display: inline-block;
+			margin-bottom: 0;
+			color:rgb(236,127,37);
+		}
+		.prv-avail {
+			&.intermediate {
+				color: $intermediate;
+			}
+			&.critical {
+				color: $critical;
+			}
+		}
+		.total-avail {
+			margin-bottom: 20px;
+			display: table;
+		}
+	}
+}
+
+@media screen and (max-width:1000px) {
+  .prv-clinics {
+    font-size:22px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .prv-nav {
+    margin:0;
+	}
+  .prv-info {
+    margin-top:20px;
+  }
+  .prv-clinics {
+    font-size:18px;
+  }
+  .table-header {
+    h5 {
+      font-size:18px;
+    }
+  }
+  .table-body {
+    font-size:14px;
+  }
+}
+
+@media screen and (max-width:543px) {
+	.header {
+    h3 {
+      margin-bottom:20px;
+      text-align:center;
+    }
+
+    p {
+      margin:30px 0;
+    }
+
+    .mobile-nav {
+      .btn-secondary {
+        border-bottom:none;
+        border-radius:0;
+      }
+      .prv-dropdown {
+        display:inline-block;
+
+        .dropdown-menu {
+          width:100%;
+        }
+
+        .btn-secondary {
+          border-bottom:1px solid #ccc;
+          border-radius:0 0 6px 6px;
+        }
+      }
+
+      .mobile-info {
+        display:block;
+
+        .btn-secondary {
+          border-radius:6px 6px 0 0;
+        }
+
+        .card {
+          border-radius:0;
+          margin-bottom:0;
+          border-bottom:none;
+          text-align:justify;
+        }
+      }
+    }
+
+    .desktop-info {
+      display:none;
+    }
+
+		.report-dropdown {
+      display:block;
+
+			.dropdown-toggle {
+				width:100%;
+			}
+		}
+	}
+  .prv-dropdown {
+    .dropdown-toggle, .dropdown-menu {
+      width:100%;
+    }
+  }
+  .prv-nav {
+    margin-bottom:10px;
+  }
+	.prv-info {
+    margin-top:0;
+
+		.prv-clinics {
+			text-align:center;
+			padding:15px 20px 10px;
+
+			.prv-name {
+				display:block;
+        margin-bottom:5px;
+			}
+			.colon {
+				display:none;
+			}
+		}
+	}
+  .prv-btns {
+    display:none;
+  }
+  .table-header {
+    h5 {
+      font-size:16px;
+    }
+
+    .table-xs-hide {
+      display:none;
+    }
+  }
+}

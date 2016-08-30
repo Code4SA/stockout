@@ -1,6 +1,6 @@
 (function(window) {
   var stockoutData = null;
-  var constants = {};
+  var constants = window.constants;
 
   // Cache the DOM for each province so that we don't have to
   // remake it all every time a province is selected
@@ -14,54 +14,12 @@
   DOM.$infoRow = $('#prv-stock-table .info-row');
   DOM.$totalClinics = $('#clinics-total');
   DOM.$prvBtns = $('#prv-btns');
+  DOM.$prvLinks = $('#prv-links');
   DOM.$prvName = $('#prv-name');
   DOM.$prvClinics = $('#prv-clinics');
-  DOM.$prvImg = $('#prv-image');
   DOM.$prvAvail = $('#prv-avail');
   DOM.$availDate = $('#avail-date');
   DOM.$counter = $('#counter');
-
-  // Set up constant values
-  constants.URL = 'result.json';
-  constants.PRV_IMAGES = {
-    EC: 'ec.png',
-    FS: 'fs.png',
-    GT: 'gau.png',
-    KZN: 'kzn.png',
-    LIM: 'lim.png',
-    MP: 'mpu.png',
-    NC: 'nc.png',
-    NW: 'nw.png',
-    WC: 'wc.png'
-  };
-  constants.MONTHS = ['Jan','Feb','Mar','Apr','May','June','July','Aug','Sept','Oct','Nov','Dec'];
-  constants.MEDICINES = {
-    "aba": "Abacavir (ABC) is currently recommended as part of first- and second-line antiretroviral therapy (ART) for HIV-positive paediatric patients.",
-    "adr": "Adrenaline is used as a treatment for anaphylaxis. Anaphylaxis is an extreme form of an allergic reaction can cause swelling of your mouth and tongue, breathing problems, flushing, collapse and a loss of consciousness.",
-    "amosus": "Amoxicillin suspension is used susceptible infections including ear/nose/throat, genetial and unirary tract, skin and skin structures, lower respiratory, acute uncomplicated gonorrhea.",
-    "amocap": "Amoxicillin capsules are used susceptible infections including ear/nose/throat, genetial and unirary tract, skin and skin structures, lower respiratory, acute uncomplicated gonorrhea.",
-    "azi": "Azithromycin is used to treat many different types of infections caused by bacteria, such as respiratory infections, skin infections, ear infections, and sexually transmitted diseases.",
-    "cef": "Azithromycin is used to treat many different types of infections caused by bacteria, such as respiratory infections, skin infections, ear infections, and sexually transmitted diseases.", // Double of azi; legacy
-    "bec": "Beclomethasone 50 mcg or 100 mcg inhaler indicated as primary maintenance treatment in patients with persistent symptoms of chronic bronchial asthma.",
-    "cex": "Ceftriaxone injection is used to treat certain infections caused by bacteria such as gonorrhea (a sexually transmitted disease), pelvic inflammatory disease (infection of the female reproductive organs that may cause infertility), meningitis (infection of the membranes that surround the brain and spinal cord), and infections of the lungs, ears, skin, urinary tract, blood, bones, joints, and abdomen.",
-    "dta": "DTaP-IPV-Hib vaccine protects your child against diphtheria, tetanus, pertussis, polio, and Haemophilus influenzae type b, which are serious and sometimes fatal diseases. When you get your child immunized, you help protect others as well.",
-    "hyd": " Hydrochlorothiazide treats fluid retention (edema) in people with congestive heart failure, cirrhosis of the liver, or kidney disorders, or edema caused by taking steroids or estrogen. This medication is also used to treat high blood pressure (hypertension).",
-    "ins": "Insulin injection is used to control blood sugar in people who have type 1 diabetes (condition in which the body does not make insulin and therefore cannot control the amount of sugar in the blood) or in people who have type 2 diabetes.",
-    "iso": "Isoniazid is used with other medications to treat active tuberculosis (TB) infections. It is also used alone to prevent active TB infections in people who may be infected with the bacteria (people with positive TB skin test). Isoniazid is an antibiotic and works by stopping the growth of bacteria.",
-    "lam": "Lamivudine 10 mg/mL solution (240 mL)",
-    "med": "Medroxyprogesterone is a progestogen, which is a female hormone. It is used to prevent pregnancy. It is a very effective and safe form of contraception.",
-    "met": " Metformin is used in patients with type 2 diabetes. Controlling high blood sugar helps prevent kidney damage, blindness, nerve problems, loss of limbs, and sexual function problems.",
-    "partab": "Paracetamol is a pain reliever and a fever reducer. The exact mechanism of action of is not known.",
-    "parsyr": "Paracetamol is a pain reliever and a fever reducer. The exact mechanism of action of is not known.",
-    "rif150": "FDC regimen for treatment of tuberculosis.",
-    "rif60": "FDC regimen for treatment of tuberculosis.",
-    "sod": "Sodium Chloride used to flush wounds and skin abrasions, as eye drops, for intravenous infusion, rinsing contact lenses, nasal irrigation, and a variety of other purposes.",
-    "ten": "Antiretroviral drugs (ARVs) will be used in the first line treatment of HIV-positive patients.",
-    "tet": "Tetanus toxoid vaccine is given to provide protection (immunity) against tetanus (lockjaw) in adults and children 7 years or older.",
-    "val": "Sodium valproate is used to prevent epileptic seizures in children.",
-    "car": "Sodium valproate is used to prevent epileptic seizures in children.", // Double of VAL; legacy
-    "hex": "DTaP-IPV-Hib vaccine protects your child against diphtheria, tetanus, pertussis, polio, and Haemophilus influenzae type b, which are serious and sometimes fatal diseases. When you get your child immunized, you help protect others as well." // Double of DTA; legacy
-  };
 
   // Pull in data
   fetch(constants.URL)
@@ -78,17 +36,10 @@
               return a.name > b.name;
             });
 
-            // Update total number of clinics
-            view({ target: 'totalClinics', change: stockoutData.country_stats.total_clinics });
-
-            calculateCounter();
             setupButtons(stockoutData.provinces);
           });
         }
-      })
-    .catch(function(err) {
-      console.log(Error(err));
-    });
+      });
 
   function isArray(arr) {
     if(!Array.isArray) {
@@ -98,50 +49,46 @@
     }
   }
 
-  function calculateCounter() {
-    var now = new Date();
-    var toEndOfYear = ((new Date(new Date().getFullYear(), 11, 31) - now) * 100) / now;
-    var c = 2 * 80 * Math.PI;
-    var strokeLength = c - (toEndOfYear * c);
-
-    view({ target: 'counter', change: strokeLength, type: 'dash' });
-  }
-
   function setupButtons(provinces) {
-    var $btns = [];
-    var dom = {};
+    var $links = [];
+    var dom = [];
     // Create a list of indexes that point us to where each ID is
     // in the the list of province objects so that we don't have to
     // search the array every time we want to find a province
     provinces.forEach(function(province,i) {
       var code = province.code;
+      var isNational = code === 'ZA';
 
       provinceIndex[code] = i;
 
-      $btns.push(createButton(province.name,code,code === 'EC'));
+      $links.push(createLink(isNational ? 'National' : province.name,code,isNational));
+
+      if(isNational) {
+        var temp = province[0];
+        var tempLink = $links[0];
+
+        province[0] = province;
+        province[i] = temp;
+        $links[0] = $links[$links.length - 1];
+        $links[$links.length - 1] = tempLink;
+      }
     });
 
     // Add buttons to DOM
-    dom.target = 'prvBtns';
-    dom.change = $btns;
-    dom.type = 'list';
+    dom.push({ target: 'prvLinks', change: $links, type: 'list' });
 
     view(dom);
 
-    // Capture button DOM
-    DOM.$btns = $('.prv-btn');
-
     // Attach click handlers and display province data as callback
-    buttonClickHandlers(displayProvinceData.bind(null,'EC'));
+    buttonClickHandlers(displayStockData.bind(null,'ZA'));
   }
 
-  function createButton(name,code,active) {
-    var $btn = $('<button class="btn prv-btn" type="button" data-code="' + code + '">' + name + '</button>');
-    var $listItem = $('<li class="list-item"></li>').add($btn);
+  function createLink(name,code,active) {
+    var $link = $('<a class="dropdown-item nav-item" data-code="' + code + '">' + name + '</a>');
 
-    if(active) $btn.addClass('active');
+    if(active) $link.addClass('active');
 
-    return $listItem;
+    return $link;
   }
 
   function tableClickHandlers() {
@@ -184,19 +131,18 @@
   function buttonClickHandlers(cb) {
     // Event listener should only be attached once we've
     // gotten the data we need
-    var $btns = DOM.$btns;
+    var $btns = $.merge(DOM.$prvBtns,DOM.$prvLinks);
 
     $btns.on('click', function(e) {
       var $target = $(e.target);
       var code = $target.attr('data-code');
 
       // Toggle active button classes
-      $btns.removeClass('active');
-      $target.addClass('active');
-
+      $('.nav-item').removeClass('active');
+      $('.nav-item[data-code="' + code + '"]').addClass('active');
       // Show province data
       if(code) {
-        displayProvinceData(code);
+        displayStockData(code);
       } else {
         console.log('Province data does not exist for province with code ' + code);
       }
@@ -214,14 +160,14 @@
     var stringSplit = medicine.split('(');
     var name = stringSplit[0] ? stringSplit[0] : '';
     var dosage = stringSplit[1] ? '(' + stringSplit[1] : '';
-    var $row = $('<div class="' + row.status + '"></div>');
+    var $row = $('<div class="med-row ' + row.status + '"></div>');
     var $info = $('<div class="med-info" id="' + code + '-heading"></div>');
-    var $toggle = $('<div class="med-row row" aria-controls="info-' + code + '" data-toggle="collapse" data-parent="#stock-table" aria-expanded="false" data-target="#info-' + code + '"></div>');
+    var $toggle = $('<div class="row-toggle row" aria-controls="info-' + code + '" data-toggle="collapse" data-parent="#stock-table" aria-expanded="false" data-target="#info-' + code + '"></div>');
     var $box = $('<div id="info-' + code + '" class="panel-collapse collapse" role="tabpanel" aria-labelledby="' + code + '-heading"><div class="inner">' + constants.MEDICINES[code] + '</div></div>');
-    var $medName = $('<div class="med-name col-xs-7">' + name + '</div>');
+    var $medName = $('<div class="med-name col-xs-6 col-sm-7"><span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>' + name + '</div>');
     var $medDosage = $('<span class="med-dosage">' + dosage + '</span>');
-    var $medAvail = $('<div class="med-avail text-xs-center col-xs-3"><strong>' + row.avail + '%</strong></div>');
-    var $medChecks = $('<div class="med-checks text-xs-center col-xs-2">' + row.totalChecks + '</div>');
+    var $medAvail = $('<div class="med-avail text-xs-center col-xs-3 col-sm-3"><strong>' + row.avail + '%</strong></div>');
+    var $medChecks = $('<div class="med-checks text-xs-center col-xs-3 col-sm-2">' + row.totalChecks + '</div>');
 
     $medName.append($medDosage);
     $toggle.append($medName,$medAvail,$medChecks);
@@ -258,14 +204,7 @@
         row.name = medicines[med];
         row.totalChecks = totalChecks;
         row.avail = availability
-
-        if(availability <= 50) {
-          row.status = 'critical';
-        } else if(availability > 50 && availability <= 75) {
-          row.status = 'intermediate';
-        } else {
-          row.status = 'normal';
-        }
+        row.status = colorClass(availability);
 
         table.push(row);
       }
@@ -276,6 +215,20 @@
     });
 
     return table;
+  }
+
+  function colorClass(num) {
+    var className = '';
+
+    if(num <= 50) {
+      className = 'critical';
+    } else if(num > 50 && num <= 75) {
+      className = 'intermediate';
+    } else {
+      className = 'normal';
+    }
+
+    return className;
   }
 
   function view(dom) {
@@ -298,9 +251,6 @@
                 .empty()
                 .append(domChange);
               break;
-            case 'img':
-              domTarget.attr('src','img/' + domChange);
-              break;
             case 'dash':
               domTarget.attr('stroke-dashoffset',domChange);
               break;
@@ -315,13 +265,14 @@
   }
 
   // Insert the correct DOM
-  function displayProvinceData(code) {
+  function displayStockData(code) {
     var province = stockoutData.provinces[provinceIndex[code]];
     var stockData;
 
     if(!!province) {
       var provinceCache = domCache[code];
       var stats = province.stats;
+      var totalClinics = stats.total_clinics;
       var stockTable = [];
       var stockData = null;
       var dom = [];
@@ -342,7 +293,7 @@
         }
       }
 
-      dateFormat = constants.MONTHS[latestDate.getMonth()];
+      dateFormat = latestDate.getFullYear();
 
       if(!!provinceCache) {
         stockData = provinceCache;
@@ -360,14 +311,16 @@
 
       // Create new DOM
       dom.push({ target: 'prvName', change: province.name });
-      dom.push({ target: 'prvClinics', change: stats.total_clinics });
-      dom.push({ target: 'prvImg', change: constants.PRV_IMAGES[code], type: 'img' });
+      dom.push({ target: 'prvClinics', change: totalClinics });
       dom.push({ target: 'stockTable', change: stockTable, type: 'list' });
       dom.push({ target: 'prvAvail', change: availability + '%' });
       dom.push({ target: 'availDate', change: dateFormat });
 
       // Set the view
       view(dom);
+
+      // COLOR INDICATOR
+      DOM.$prvAvail.addClass(colorClass(availability));
 
       // Grab medicine row DOM references
       DOM.$medicines = $('#prv-stock-table .med-row');
