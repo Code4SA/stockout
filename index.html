@@ -15,7 +15,7 @@
     <![endif]-->
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="#pym-container">
       <header class="header">
         <div class="row">
           <div class="col-xs-12 col-sm-6 col-md-7">
@@ -122,10 +122,12 @@
   <script src="js/vendor/bs-util.js"></script>
   <script src="js/vendor/bs-dropdown.js"></script>
   <script src="js/vendor/bs-collapse.js"></script>
-  <script src="js/app.js"></script>
   <script type="text/javascript">
     var pymChild = new pym.Child({id: 'code4sa-embed-stockout' });
+
+    window.pymChild = pymChild;
   </script>
+  <script src="js/app.js"></script>
   <!-- end scripts -->
   </body>
 </html>

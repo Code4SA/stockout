@@ -1,6 +1,7 @@
 (function(window) {
   var stockoutData = null;
   var constants = window.constants;
+  var pymChild = window.pymChild || new pym.Child({id: 'code4sa-embed-stockout' });
 
   // Cache the DOM for each province so that we don't have to
   // remake it all every time a province is selected
@@ -259,6 +260,8 @@
       } else if(!isArray(dom) && typeof dom === 'object') {
         view([dom]);
       }
+
+      pymChild.sendHeight(); // Make sure pym resizes
     } else {
       console.log('No keys supplied to view, so DOM remains unchanged.');
     }
