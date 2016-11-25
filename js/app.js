@@ -8,6 +8,12 @@
   var domCache = {};
   var provinceIndex = {};
 
+  // Dates
+  var currentDate = new Date();
+  var adjustedDate = currentDate;
+
+  adjustedDate.setDate(adjustedDate.getDate() - constants.WAITING_PERIOD);
+
   // DOM Elements
   var DOM = {};
 
@@ -21,6 +27,7 @@
   DOM.$prvAvail = $('#prv-avail');
   DOM.$availDate = $('#avail-date');
   DOM.$counter = $('#counter');
+  DOM.$reports = $('#reports');
 
   // Pull in data
   fetch(constants.URL)
@@ -34,6 +41,15 @@
           });
         }
       });
+
+  // Append yearly reports
+  for(var year=constants.REPORTS_START;year <= currentDate.getFullYear(); year++) {
+    var reportName = 'Full-year ' + year;
+
+    if(year == currentDate.getFullYear()) reportName = constants.LONG_MONTHS[0] + ' - ' + constants.LONG_MONTHS[adjustedDate.getMonth()] + ' '  + year;
+
+    DOM.$reports.append('<a class="dropdown-item" href="https://cbm.code4sa.org/stockouts/year/report/?year=' + year + '" target="_blank">' + reportName + '</a>');
+  }
 
   function isArray(arr) {
     if(!Array.isArray) {
