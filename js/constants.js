@@ -1,7 +1,7 @@
 // Set up constant values
 window.constants = window.constants || {};
 
-constants.URL = 'result.json';
+constants.URL = 'https://cbm.code4sa.org/stockouts/stats/';
 constants.PRV_IMAGES = {
   EC: 'ec.png',
   FS: 'fs.png',
