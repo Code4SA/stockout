@@ -13,7 +13,10 @@ constants.PRV_IMAGES = {
   NW: 'nw.png',
   WC: 'wc.png'
 };
+constants.REPORTS_START = 2014;
+constants.WAITING_PERIOD = 28;
 constants.MONTHS = ['Jan','Feb','Mar','Apr','May','June','July','Aug','Sept','Oct','Nov','Dec'];
+constants.LONG_MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 constants.MEDICINES = {
   "aba": "Abacavir (ABC) is currently recommended as part of first- and second-line antiretroviral therapy (ART) for HIV-positive paediatric patients.",
   "adr": "Adrenaline is used as a treatment for anaphylaxis. Anaphylaxis is an extreme form of an allergic reaction can cause swelling of your mouth and tongue, breathing problems, flushing, collapse and a loss of consciousness.",
