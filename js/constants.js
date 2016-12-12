@@ -13,7 +13,7 @@ constants.PRV_IMAGES = {
   NW: 'nw.png',
   WC: 'wc.png'
 };
-constants.REPORTS_START = 2014;
+constants.REPORTS_START = 2016;
 constants.WAITING_PERIOD = 28;
 constants.MONTHS = ['Jan','Feb','Mar','Apr','May','June','July','Aug','Sept','Oct','Nov','Dec'];
 constants.LONG_MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];

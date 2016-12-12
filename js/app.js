@@ -48,7 +48,7 @@
 
     if(year == currentDate.getFullYear()) reportName = constants.LONG_MONTHS[0] + ' - ' + constants.LONG_MONTHS[adjustedDate.getMonth()] + ' '  + year;
 
-    DOM.$reports.append('<a class="dropdown-item" href="https://cbm.code4sa.org/stockouts/year/report/?year=' + year + '" target="_blank">' + reportName + '</a>');
+    DOM.$reports.append('<a class="dropdown-item" href="https://cbm.code4sa.org/stockouts/year/report?year=' + year + '" target="_blank">' + reportName + '</a>');
   }
 
   function isArray(arr) {
