@@ -62,8 +62,8 @@
   function init(data) {
     stockoutData = data;
 
-    // Sort provinces by name
-    stockoutData.provinces.sort(function(a,b) {
+    // Sort jurisdictions by name
+    stockoutData.jurisdictions.sort(function(a,b) {
       return a.name > b.name;
     });
 
@@ -76,13 +76,13 @@
   }
 
   function setupLinks() {
-    var provinces = stockoutData.provinces;
+    var jurisdictions = stockoutData.jurisdictions;
     var $links = [];
     var dom = [];
     // Create a list of indexes that point us to where each ID is
     // in the the list of province objects so that we don't have to
     // search the array every time we want to find a province
-    provinces.forEach(function(province,i) {
+    jurisdictions.forEach(function(province,i) {
       var code = province.code;
       var isNational = code === 'ZA';
 
@@ -294,7 +294,7 @@
 
   // Insert the correct DOM
   function displayStockData(code) {
-    var province = stockoutData.provinces[provinceIndex[code]];
+    var province = stockoutData.jurisdictions[provinceIndex[code]];
     var stockData;
 
     if(!!province) {
